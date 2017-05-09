@@ -1,0 +1,13 @@
+## 目录
+1. [eval()](#docs/eval)
+1. [uneval() \[非标准\] ]()
+1. [isFinite()](#docs/isFinite)
+1. [isNaN()](#docs/isNaN)
+1. [parseFloat()](#docs/parseFloat)
+1. [parseInt()](#docs/parseInt)
+1. [decodeURI()](#docs/decodeURI)
+1. [decodeURIComponent()](#docs/decodeURIComponent)
+1. [encodeURI()](#docs/encodeURI)
+1. [encodeURIComponent()](#docs/encodeURIComponent)
+1. [escape() \[已丢弃\]](#docs/escape)
+1. [unescape() \[已丢弃\]](#docs/unescape)

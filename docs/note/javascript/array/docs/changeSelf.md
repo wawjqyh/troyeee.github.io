@@ -209,3 +209,12 @@ console.log(myFish);
 console.log(popped);
 // surgeon
 ```
+
+#### 规范
+
+| Specification                           | Status   | Comment            |
+|:-----------------------------------|:--------|:-----------------|
+| ECMAScript 3rd Edition (ECMA-262)       | Standard | Initial definition |
+| ECMAScript 5.1 (ECMA-262)               | Standard |  |
+| ECMAScript 2015 (6th Edition, ECMA-262) | Standard |  |
+| ECMAScript 2017 Draft (ECMA-262)        | Draft    |  |

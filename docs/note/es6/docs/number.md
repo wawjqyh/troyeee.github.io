@@ -33,9 +33,9 @@ Number('0o10')  // 8
 
 ## Number.isFinite(), Number.isNaN()
 
-ES6在Number对象上，新提供了`Number.isFinite()`和`Number.isNaN()`两个方法。
+ES6在Number对象上，新提供了`Number.isFinite.md()`和`Number.isNaN()`两个方法。
 
-`Number.isFinite()`用来检查一个数值是否为有限的（finite）。
+`Number.isFinite.md()`用来检查一个数值是否为有限的（finite）。
 
 ```javascript
 Number.isFinite(15); // true
@@ -48,7 +48,7 @@ Number.isFinite('15'); // false
 Number.isFinite(true); // false
 ```
 
-ES5可以通过下面的代码，部署`Number.isFinite`方法。
+ES5可以通过下面的代码，部署`Number.isFinite.md`方法。
 
 ```javascript
 (function (global) {
@@ -94,7 +94,7 @@ ES5通过下面的代码，部署`Number.isNaN()`。
 })(this);
 ```
 
-它们与传统的全局方法`isFinite()`和`isNaN()`的区别在于，传统方法先调用`Number()`将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，非数值一律返回`false`。
+它们与传统的全局方法`isFinite.md()`和`isNaN()`的区别在于，传统方法先调用`Number()`将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，非数值一律返回`false`。
 
 ```javascript
 isFinite(25) // true
