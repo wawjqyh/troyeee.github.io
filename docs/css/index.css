@@ -333,6 +333,7 @@ body {
 }
 table {
   background-color: #333;
+  margin-top: 10px;
 }
 table th {
   border-bottom: 2px solid #666;

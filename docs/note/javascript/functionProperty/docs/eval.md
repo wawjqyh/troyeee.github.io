@@ -232,8 +232,8 @@ alert("b is : " + b);
 
 ## 5、规范
 
-| Specification                           | Status   | Comment                           |
-|:-----------------------------------|:--------|:------------------------------|
+| Specification                           | Status   | Comment            |
+|:----------------------------------------|:---------|:-------------------|
 | ECMAScript 1st Edition (ECMA-262)       | Standard | Initial definition |
 | ECMAScript 5.1 (ECMA-262)               | Standard |                    |
 | ECMAScript 2015 (6th Edition, ECMA-262) | Standard |                    |

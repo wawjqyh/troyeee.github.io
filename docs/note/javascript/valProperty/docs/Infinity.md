@@ -34,7 +34,7 @@ console.log(1 / Infinity      ); /* 0 */
 ## 4、规范
 
 | Specification                           | Status   | Comment                           |
-|:-----------------------------------|:--------|:------------------------------|
+|:----------------------------------------|:---------|:----------------------------------|
 | ECMAScript 1st Edition (ECMA-262)       | Standard | Initial definition JavaScript 1.3 |
-| ECMAScript 5.1 (ECMA-262)               | Standard |                    |
-| ECMAScript 2015 (6th Edition, ECMA-262) | Standard |                    |
+| ECMAScript 5.1 (ECMA-262)               | Standard |                                   |
+| ECMAScript 2015 (6th Edition, ECMA-262) | Standard |                                   |

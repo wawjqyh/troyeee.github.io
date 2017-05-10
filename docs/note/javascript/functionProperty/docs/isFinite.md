@@ -32,10 +32,10 @@ isFinite(2e64);      // true, 在更强壮的Number.isInfite(null)中将会得�
 isFinite("0");       // true, 在更强壮的Number.isInfite('0')中将会得到false
 ```
 
-## 4、规范
+## 规范
 
-| Specification                           | Status   | Comment                           |
-|:-----------------------------------|:--------|:------------------------------|
+| Specification                           | Status   | Comment            |
+|:----------------------------------------|:---------|:-------------------|
 | ECMAScript 3rd Edition (ECMA-262)       | Standard | Initial definition |
 | ECMAScript 5.1 (ECMA-262)               | Standard |                    |
 | ECMAScript 2015 (6th Edition, ECMA-262) | Standard |                    |
