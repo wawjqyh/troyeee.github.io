@@ -41,6 +41,13 @@ body {
     font-size: 14px;
     padding: 0;
   }
+  #sidebar p {
+    padding: 0;
+    margin: 5px 0 0 0;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }
 /*左侧侧边栏*/
 @media (max-width: 599px) {
@@ -352,4 +359,5 @@ table th {
   position: fixed;
   left: 1050px;
   bottom: 20px;
+  cursor: pointer;
 }
