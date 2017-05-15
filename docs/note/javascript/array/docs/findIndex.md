@@ -57,7 +57,7 @@ console.log( [4, 6, 8, 12].findIndex(isPrime) ); // -1, 没找到质数元素
 console.log( [4, 6, 7, 12].findIndex(isPrime) ); // 2
 ```
 
-#### 规范
+## 规范
 
 | Specification                           | Status   | Comment            |
 |:----------------------------------------|:---------|:-------------------|

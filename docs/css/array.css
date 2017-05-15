@@ -1,15 +1,16 @@
 body {
   background-color: #f3f3f3;
   font: normal normal normal 14px/20px 'Microsoft YaHei', Arial, sans-serif;
+  color: #333;
+}
+.pageDesc {
+  padding: 30px;
 }
 h1 {
   font-size: 20px;
   color: #999;
   line-height: 30px;
   padding: 0 30px;
-}
-.pageDesc {
-  padding: 10px 30px 30px 30px;
 }
 ul {
   margin: 0;
@@ -25,17 +26,19 @@ a {
   width: 1200px;
   margin: 0 auto;
 }
-.col {
-  float: left;
-  box-sizing: border-box;
-  padding: 0 10px;
+.colCon:after {
+  display: block;
+  content: " ";
+  clear: both;
 }
 .li {
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
   border-radius: 10px;
-  margin-bottom: 20px;
   overflow: hidden;
+  width: 380px;
+  margin: 0 10px;
+  float: left;
   -webkit-transition: ease-out 0.5s;
   -moz-transition: ease-out 0.5s;
   -ms-transition: ease-out 0.5s;
@@ -48,17 +51,22 @@ a {
   padding: 0 20px;
   color: #fff;
 }
-.li .desc {
-  padding: 15px 20px 0 20px;
-}
 .li ul {
   padding: 10px 20px;
 }
 .li li {
+  margin-bottom: 6px;
+}
+.li li .name {
+  color: #0fa4ff;
+}
+.li li .desc {
+  font-size: 12px;
+  line-height: 16px;
   color: #999;
 }
 .li:hover {
-  box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.2);
+  box-shadow: 0 8px 24px 0 rgba(7, 17, 27, 0.2);
 }
 .link {
   color: #0fa4ff;
