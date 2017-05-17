@@ -13,16 +13,17 @@ body {
 /*左侧侧边栏*/
 @media (min-width: 600px) {
   #sidebar {
-    width: 270px;
+    width: 310px;
     position: fixed;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 20px 50px 20px;
     top: 0;
     left: 0;
     overflow-y: auto;
     overflow: -moz-scrollbars-vertical;
     border-right: 1px solid #222;
     background-color: #3c3f41;
+    box-sizing: border-box;
   }
   #sidebar h2 {
     font-size: 18px;
@@ -45,7 +46,7 @@ body {
     padding: 0;
     margin: 5px 0 0 0;
   }
-  ::-webkit-scrollbar {
+  #sidebar::-webkit-scrollbar {
     width: 0;
   }
 }

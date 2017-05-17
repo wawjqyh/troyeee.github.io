@@ -1,15 +1,7 @@
 body {
   background-color: #f3f3f3;
   font: normal normal normal 14px/20px 'Microsoft YaHei', Arial, sans-serif;
-}
-h1 {
-  font-size: 20px;
-  color: #999;
-  line-height: 30px;
-  padding: 0 30px;
-}
-.pageDesc {
-  padding: 10px 30px 30px 30px;
+  color: #333;
 }
 ul {
   margin: 0;
@@ -21,16 +13,36 @@ a {
   text-decoration: none;
 }
 #container {
-  padding: 50px 0;
+  padding: 30px 0;
   width: 1200px;
   margin: 0 auto;
 }
-.col {
-  float: left;
+#container h1 {
+  font-size: 20px;
+  color: #999;
+  line-height: 30px;
+  margin: 20px 30px;
+  padding: 0;
+}
+#container .pageDesc {
+  margin: 20px 30px;
+}
+#container .colCon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#container .colCon:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+#container .colCon .col {
   box-sizing: border-box;
   padding: 0 10px;
+  flex-grow: 1;
 }
-.li {
+#container .colCon .col .li {
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
   border-radius: 10px;
@@ -42,25 +54,34 @@ a {
   -o-transition: ease-out 0.5s;
   transition: ease-out 0.5s;
 }
-.li .noteHeader {
+#container .colCon .col .li .noteHeader {
   height: 50px;
   line-height: 50px;
   padding: 0 20px;
   color: #fff;
 }
-.li .desc {
+#container .colCon .col .li .desc {
   padding: 15px 20px 0 20px;
 }
-.li ul {
+#container .colCon .col .li ul {
   padding: 10px 20px;
 }
-.li li {
+#container .colCon .col .li li {
+  color: #999;
+  margin-bottom: 5px;
+}
+#container .colCon .col .li .itemName {
+  color: #0fa4ff;
+}
+#container .colCon .col .li .itemDesc {
+  font-size: 12px;
+  line-height: 16px;
   color: #999;
 }
-.li:hover {
+#container .colCon .col .li:hover {
   box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.2);
 }
-.link {
+#container .colCon .col .link {
   color: #0fa4ff;
 }
 .orange {
