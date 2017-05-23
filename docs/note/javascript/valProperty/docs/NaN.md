@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank">en</a>
+
 # NaN
 
 全局属性 NaN 表示 Not-A-Number 的值。

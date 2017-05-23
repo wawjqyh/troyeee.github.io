@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Infinity" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-us/docs/Web/JavaScript/Reference/Global_Objects/Infinity" target="_blank">en</a>
+
 # Infinity
 
 全局属性 Infinity 是一个数值，表示无穷大。
