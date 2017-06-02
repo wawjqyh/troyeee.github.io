@@ -27,7 +27,9 @@ app.use(cookieParser());
 /**
  * 配置静态文件目录
  */
-app.use(express.static(path.join(__dirname, 'docs')));
+app.use("/docs", express.static(path.join(__dirname, 'docs')));
+
+app.use("/", express.static(path.join(__dirname, 'vuedocs')));
 
 /**
  * 在express 默认生成的代码中，变量名为logger（记录器）;在控制台中，显示req请求的信息。
