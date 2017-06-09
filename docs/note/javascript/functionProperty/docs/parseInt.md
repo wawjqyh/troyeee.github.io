@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">en</a>
+
 # parseInt()
 
 parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)。
