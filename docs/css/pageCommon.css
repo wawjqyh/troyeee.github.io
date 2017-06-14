@@ -127,3 +127,20 @@ a {
 .backLink a:hover {
   box-shadow: 3px 3px 10px 0 #999;
 }
+@media (max-width: 640px) {
+  #container {
+    padding: 30px 15px;
+    width: auto;
+    margin: 0 auto;
+  }
+  #container .colCon {
+    display: block;
+  }
+  #container .colCon .col {
+    width: auto;
+  }
+  .backLink {
+    bottom: 30px;
+    right: 20px;
+  }
+}

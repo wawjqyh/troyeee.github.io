@@ -5,141 +5,6 @@ body {
   padding: 0;
   background-color: #2b2b2b;
 }
-@media (max-width: 599px) {
-  body {
-    padding-top: 41px;
-  }
-}
-/*左侧侧边栏*/
-@media (min-width: 600px) {
-  #sidebar {
-    width: 310px;
-    position: fixed;
-    height: 100%;
-    padding: 0 20px 50px 20px;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-    overflow: -moz-scrollbars-vertical;
-    border-right: 1px solid #222;
-    background-color: #3c3f41;
-    box-sizing: border-box;
-  }
-  #sidebar h2 {
-    font-size: 18px;
-  }
-  #sidebar a:visited,
-  #sidebar a:link {
-    color: #4682BE;
-    text-decoration: none;
-  }
-  #sidebar ol {
-    margin: 0 0 0 10px;
-    padding: 0;
-  }
-  #sidebar ol li {
-    margin: 2px 0;
-    font-size: 14px;
-    padding: 0;
-  }
-  #sidebar p {
-    padding: 0;
-    margin: 5px 0 0 0;
-  }
-  #sidebar::-webkit-scrollbar {
-    width: 0;
-  }
-}
-/*左侧侧边栏*/
-@media (max-width: 599px) {
-  #sidebar {
-    width: 65%;
-    position: fixed;
-    height: 100%;
-    padding: 20px;
-    top: 0;
-    left: -65%;
-    overflow-y: auto;
-    overflow: -moz-scrollbars-vertical;
-    border-right: 1px solid #222;
-    background-color: #3c3f41;
-    box-sizing: border-box;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    -ms-transition: ease-out 0.4s;
-    -o-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
-  }
-  #sidebar h2 {
-    font-size: 16px;
-  }
-  #sidebar a:visited,
-  #sidebar a:link {
-    color: #4682BE;
-    text-decoration: none;
-  }
-  #sidebar ol {
-    margin: 0 0 0 10px;
-    padding: 0;
-  }
-  #sidebar ol li {
-    font-size: 14px;
-    padding: 10px 0;
-    line-height: 20px;
-    border-bottom: 1px solid #434343;
-  }
-}
-@media (min-width: 600px) {
-  #header {
-    display: none;
-  }
-}
-@media (max-width: 599px) {
-  #header {
-    position: fixed;
-    height: 40px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #3c3f41;
-    border-bottom: 1px solid #222;
-  }
-  #header a {
-    color: #bababa;
-    text-decoration: none;
-    position: absolute;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    top: 0;
-    font-size: 16px;
-  }
-  #header #index {
-    left: 0;
-  }
-  #header #nav {
-    right: 0;
-  }
-}
-@media (min-width: 600px) {
-  #content {
-    padding-top: 10px;
-    padding-bottom: 150px;
-    counter-reset: section;
-    width: 650px;
-    padding-left: 330px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-/*移动端*/
-@media (max-width: 599px) {
-  #content {
-    padding: 10px 10px 50px 10px;
-    counter-reset: section;
-    margin: 0;
-  }
-}
 #content {
   /*代码样式*/
   /*符号*/
@@ -265,7 +130,74 @@ body {
 #content .operator {
   color: #9876aa;
 }
+table {
+  background-color: #333;
+  margin-top: 10px;
+}
+table th {
+  border-bottom: 2px solid #666;
+}
+table tr {
+  border-bottom: 1px solid #666;
+}
+table tr:last-child {
+  border-bottom: none;
+}
+table td,
+table th {
+  padding: 5px 10px;
+}
 @media (min-width: 600px) {
+  #header {
+    display: none;
+  }
+  /*左侧侧边栏*/
+  #sidebar {
+    width: 310px;
+    position: fixed;
+    height: 100%;
+    padding: 0 20px 50px 20px;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow: -moz-scrollbars-vertical;
+    border-right: 1px solid #222;
+    background-color: #3c3f41;
+    box-sizing: border-box;
+  }
+  #sidebar h2 {
+    font-size: 18px;
+  }
+  #sidebar a:visited,
+  #sidebar a:link {
+    color: #4682BE;
+    text-decoration: none;
+  }
+  #sidebar ol {
+    margin: 0 0 0 10px;
+    padding: 0;
+  }
+  #sidebar ol li {
+    margin: 2px 0;
+    font-size: 14px;
+    padding: 0;
+  }
+  #sidebar p {
+    padding: 0;
+    margin: 5px 0 0 0;
+  }
+  #sidebar::-webkit-scrollbar {
+    width: 0;
+  }
+  #content {
+    padding-top: 10px;
+    padding-bottom: 150px;
+    counter-reset: section;
+    width: 650px;
+    padding-left: 330px;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .content-toc {
     position: fixed;
     left: 1020px;
@@ -294,8 +226,94 @@ body {
   .content-toc .toc-h3:before {
     display: none;
   }
+  #back_to_top {
+    position: fixed;
+    left: 1050px;
+    bottom: 20px;
+    cursor: pointer;
+  }
+  .backLink {
+    position: fixed;
+    left: 1050px;
+    bottom: 50px;
+  }
+  .backLink a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
 }
 @media (max-width: 599px) {
+  body {
+    padding-top: 41px;
+  }
+  #header {
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #3c3f41;
+    border-bottom: 1px solid #222;
+  }
+  #header a {
+    color: #bababa;
+    text-decoration: none;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    top: 0;
+    font-size: 16px;
+  }
+  #header #index {
+    left: 0;
+  }
+  #header #nav {
+    right: 0;
+  }
+  /*左侧侧边栏*/
+  #sidebar {
+    width: 65%;
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+    top: 0;
+    left: -65%;
+    overflow-y: auto;
+    overflow: -moz-scrollbars-vertical;
+    border-right: 1px solid #222;
+    background-color: #3c3f41;
+    box-sizing: border-box;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    -ms-transition: ease-out 0.4s;
+    -o-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
+  #sidebar h2 {
+    font-size: 16px;
+  }
+  #sidebar a:visited,
+  #sidebar a:link {
+    color: #4682BE;
+    text-decoration: none;
+  }
+  #sidebar ol {
+    margin: 0 0 0 10px;
+    padding: 0;
+  }
+  #sidebar ol li {
+    font-size: 14px;
+    padding: 10px 0;
+    line-height: 20px;
+    border-bottom: 1px solid #434343;
+  }
+  #content {
+    padding: 10px 10px 50px 10px;
+    counter-reset: section;
+    margin: 0;
+  }
   .content-toc {
     width: 65%;
     position: fixed;
@@ -338,37 +356,26 @@ body {
   .content-toc .toc-h3:before {
     display: none;
   }
-}
-table {
-  background-color: #333;
-  margin-top: 10px;
-}
-table th {
-  border-bottom: 2px solid #666;
-}
-table tr {
-  border-bottom: 1px solid #666;
-}
-table tr:last-child {
-  border-bottom: none;
-}
-table td,
-table th {
-  padding: 5px 10px;
-}
-#back_to_top {
-  position: fixed;
-  left: 1050px;
-  bottom: 20px;
-  cursor: pointer;
-}
-.backLink {
-  position: fixed;
-  left: 1050px;
-  bottom: 50px;
-}
-.backLink a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
+  #back_to_top {
+    display: none !important;
+  }
+  .backLink {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+  }
+  .backLink a {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: block;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 3px 3px 10px 0 #000;
+    margin-bottom: 10px;
+    color: #bababa;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
 }

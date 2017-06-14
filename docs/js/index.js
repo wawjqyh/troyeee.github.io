@@ -20,15 +20,17 @@ var main = {
     };
 
     function initEvent() {
-        $("#index").on("click", function () {
+        $("#index").on("click", function (e) {
+            e.stopPropagation();
             $("#sidebar").css("left", "0");
         });
 
-        $("#nav").on("click", function () {
+        $("#nav").on("click", function (e) {
+            e.stopPropagation();
             $("#content-toc").css("right", "0");
         });
 
-        $("#content").on("click", function () {
+        $("#container").on("click", function () {
             if ($("body").width() < 600) {
                 $("#sidebar").css("left", "-65%");
                 $("#content-toc").css("right", "-65%");
