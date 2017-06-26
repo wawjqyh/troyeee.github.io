@@ -43,7 +43,8 @@ body {
 #content p code,
 #content li > code,
 #content h2 > code,
-#content h3 > code {
+#content h3 > code,
+#content table code {
   font-size: inherit;
   padding-left: 3px;
   padding-right: 3px;
