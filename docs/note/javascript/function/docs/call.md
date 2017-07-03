@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank">en</a>
+
 # Function.prototype.call()
 
 call() 方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法.

@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf" target="_blank">en</a>
+
 # Object.prototype.isPrototypeOf()
 
 isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。

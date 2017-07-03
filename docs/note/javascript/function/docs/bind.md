@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank">en</a>
+
 # Function.prototype.bind()
 
 bind()方法创建一个新的函数, 当被调用时，它的this关键字被设置为提供的值 ，在调用新函数时，提供任何一个给定的参数序列。

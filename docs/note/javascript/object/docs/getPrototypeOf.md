@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf" target="_blank">en</a>
+
 # Object.getPrototypeOf()
 
 Object.getPrototypeOf() 方法返回指定对象的原型（即, 内部[[Prototype]]属性的值）。
