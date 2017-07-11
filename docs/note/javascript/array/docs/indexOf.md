@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank">en</a>
+
 # Array.prototype.indexOf()
 
 indexOf()方法返回在数组中可以找到给定元素的第一个索引，如果不存在，则返回-1。

@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">en</a>
+
 # Array.prototype.forEach()
 
 forEach() 方法对数组的每个元素执行一次提供的函数。

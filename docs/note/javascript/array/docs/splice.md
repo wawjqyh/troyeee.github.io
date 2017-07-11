@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">en</a>
+
 # Array.prototype.splice()
 
 splice() 方法通过删除现有元素和/或添加新元素来更改数组的内容。

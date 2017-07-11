@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/values" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values" target="_blank">en</a>
+
 # Array.prototype.values()
 
 values() 方法返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值。

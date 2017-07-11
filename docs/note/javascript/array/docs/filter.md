@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">en</a>
+
 # Array.prototype.filter()
 
 filter() 方法使用指定的函数测试所有元素，并创建一个包含所有通过测试的元素的新数组。

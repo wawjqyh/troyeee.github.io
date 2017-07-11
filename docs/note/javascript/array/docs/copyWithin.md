@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin" target="_blank">en</a>
+
 # Array.prototype.copyWithin() *
 
 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小。

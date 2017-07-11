@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/entries" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries" target="_blank">en</a>
+
 # Array.prototype.entries()
 
 entries() 方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对。

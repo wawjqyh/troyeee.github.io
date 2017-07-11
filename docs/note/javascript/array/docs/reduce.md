@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">en</a>
+
 # Array.prototype.reduce()
 
 reduce() 方法对累加器和数组中的每个元素 (从左到右)应用一个函数，将其减少为单个值。

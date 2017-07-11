@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">en</a>
+
 # Array.prototype.concat()
 
 concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。

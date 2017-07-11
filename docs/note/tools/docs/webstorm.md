@@ -1,39 +1,171 @@
-|                          |                                                                     |
-|:---------------------    |:--------------------------------------------------------------------|
-| `alt + 鼠标右键`         | 新增一个光标                                                        |
-| `ctrl + shift + n`       | 打开工程中的文件，目的是打开当前工程下任意目录的文件                |
-| `ctrl + j`               | 输出模板                                                            |
-| `ctrl + b`               | 跳到变量申明处                                                      |
-| `ctrl + alt + T`         | 围绕包裹代码(包括zencoding的Wrap with Abbreviation)                 |
-| `ctrl + []`              | 匹配 {}[]                                                           |
-| `ctrl + F12`             | 可以显示当前文件的结构                                              |
-| `alt + left/right`       | 文件标签切换                                                        |
-| `ctrl + shift + up`      | 行移动                                                              |
-| `shift + alt + up`       | 块移动(if(){},while(){}语句块的移动)                                |
-| `ctrl + shift + ]/[`     | 选中块代码                                                          |
-| `ctrl + /`               | 单行注释                                                            |
-| `ctrl + shift + i`       | 显示当前CSS选择器或者JS函数的详细信息                               |
-| `ctrl + '-/+'`           | 可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠        |
-| `shift + esc`            | 当前激活的任意小窗口最小化，也可以是alt+数字键，数字在小窗口有显示  |
-| `alt + '7'`              | 显示当前的函数结构                                                  |
-| `ctrl + shift + N`       | 通过文件名快速查找工程内的文件                                      |
-| `ctrl + shift + alt + n` | 通过一个字符快速查找位置                                            |
-| `F3`                     | 查找下一个                                                          |
-| `shift + F3`             | 查找上一个                                                          |
-| `ctrl + shift + A`       | 快速查找并使用编辑器所有功能                                        |
-| `alt + [0-9]`            | 快速拆合功能界面模块                                                |
-| `ctrl + shift + F12`     | 最大区域显示代码                                                    |
-| `alt + shift + F`        | 将当前文件加入收藏夹                                                |
-| `ctrl + alt + s`         | 打开配置窗口                                                        |
-| `ctrl + tab`             | 切换代码选项卡                                                      |
-| `alt + ←/→`            | 切换代码选项卡                                                      |
-| `ctrl + F4`              | 关闭当前代码选项卡                                                  |
-| `ctrl + w`               | 选中单词                                                            |
-| `alt + insert`           | 新建一个文件或其他                                                  |
-| `shift + tab`            | 减少/扩大缩进                                                       |
-| `ctrl + y`               | 删除一行                                                            |
-| `shift + enter`          | 重新开始一行                                                        |
-| `alt + F1`               | 查找代码在其他界面模块的位置，颇为有用                              |
-| `ctrl + g`               | 到指定行的代码                                                      |
-| `ctrl + ]/[`             | 光标到代码块的前面或后面                                            |
-| `alt + up/down`          | 上一个/下一个方法                                                   |
+## Editing
+
+|                          |    |
+|:-------------------------|:---|
+| `Ctrl + Space`           | Basic code completion. 代码提示 |
+| `Alt + Enter`            | Show intention actions and quick-fixes |
+| `Ctrl + P`               | Parameter info (within method call arguments). 显示函数的参数 |
+| `Ctrl + Q`               | Quick documentation lookup. 查看说明 |
+| `Ctrl + mouse over code` | Brief Info |
+| `Ctrl + F1`              | Show descriptions of error or warning at caret. 显示错误或警告的详情 |
+| `Alt + Insert`           | Generate code... |
+| `Ctrl + Alt + T`         | Surround with...(if..else, try..catch, for, etc.) |
+| `Ctrl + J`               | Insert Live template |
+| `Ctrl + /`               | Comment/uncomment with line comment |
+| `Ctrl + Shift + /`       | Comment/uncomment with block comment |
+| `Ctrl + W`               | Select successively increasing code blocks |
+| `Ctrl + Shift + W`       | Decrease current selection to previous state |
+| `Alt + Q`                | Context Info |
+| `Ctrl + Alt + L`         | Reformat code |
+| `Ctrl + Alt + I`         | Auto-indent line(s) |
+| `Tab`                    |  Indent selected lines |
+| `Shift + Tab`            | Unindent selected lines |
+| `Ctrl + Shift + V`       | Paste from recent buffers... |
+| `Ctrl + D`               | Duplicate current line or selected block |
+| `Ctrl + Y`               | Delete line at caret |
+| `Alt + Shift + Up`       | Move line up |
+| `Alt + Shift + Down`     | Move line down |
+| `Ctrl + Shift + J`       | Join lines |
+| `Ctrl + Enter`           | Split lines |
+| `Shift + Enter`          | Start new line |
+| `Ctrl + Shift + U`       | Toggle case for word at caret or selected block |
+| `Ctrl + Shift + ]`       | Select till code block end |
+| `Ctrl + Shift + [`       | Select till code block start |
+| `Ctrl + Delete`          | Delete to word end |
+| `Ctrl + Backspace`       | Delete to word start |
+| `Ctrl + NumPad+`         |  Expand code block |
+| `Ctrl + NumPad-`         | Collapse code block |
+| `Ctrl + Shift + NumPad+` | Expand all |
+| `Ctrl + Shift + NumPad-` | Collapse all |
+| `Ctrl + F4`              | Close active editor tab |
+
+## Multiple carets and selections
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Alt + Click`            | Add or remove caret |
+| `Shift + Ctrl + Alt + J` | Select all occurrences |
+| `Alt + J`                | Select next occurrence |
+| `Alt + Shift + J`        | Unselect occurrence |
+| `Esc`                    | Unselect all occurrences or carets |
+
+## Running
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Alt + Shift + F10`      | Select configuration and run |
+| `Alt + Shift + F9`       | Select configuration and debug |
+| `Shift + F10`            | Run |
+| `Shift + F9`             | Debug |
+| `Ctrl + Shift + F10`     | Run context configuration from editor |
+| `Alt + Shift + R`        | Rerun tests |
+| `Alt + F11`              | Run Gulp/Grunt/npm tasks|
+
+## Debugging
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `F8`                     |  Step over |
+| `F7`                     | Step into |
+| `Shift + F7`             | Smart step into |
+| `Shift + F8`             | Step out |
+| `Alt + F9`               | Run to cursor |
+| `Alt + F8`               | Evaluate expression |
+| `F9`                     | Resume program |
+| `Ctrl + F8`              | Toggle breakpoint |
+| `Ctrl + Shift + F8`      | View breakpoints |
+
+## Navigation
+
+|                            |                          |
+|:-------------------------- |:-------------------------|
+| `Ctrl + B , Ctrl + Click`  | Go to declaration |
+| `Ctrl + N`                 | Go to class |
+| `Ctrl + Shift + N`         | Go to file |
+| `Ctrl + Alt + Shift + N`   | Go to symbol |
+| `Alt + Right`              | Go to next editor tab |
+| `Alt + Left`               | Go to previous editor tab |
+| `F12`                      | Go back to previous tool window |
+| `Esc`                      | Go to editor (from tool window) |
+| `Ctrl + G`                 | Go to line |
+| `Ctrl + E`                 | Recent files popup |
+| `Ctrl + Alt + Right`       | Navigate forward |
+| `Ctrl + Alt + Left`        | Navigate back |
+| `Ctrl + Shift + Backspace` | Navigate to last edit location |
+| `Alt + F1`                 | Select current file or symbol in any view |
+| `Ctrl + Alt + B`           | Go to implementation(s) |
+| `Ctrl + Shift + I`         | Open quick definition lookup |
+| `Ctrl + Shift + B`         | Go to type declaration |
+| `Ctrl + U`                 | Go to super-method/super-class |
+| `Alt + Up`                 |  Go to previous method |
+| `Alt + Down`               | Go to next method |
+| `Ctrl + ] / [`             | Move to code block end/start |
+| `Ctrl + Shift + M`         | Move caret to matching brace |
+| `Ctrl + F12`               | File structure popup |
+| `Ctrl + H`                 | Type hierarchy |
+| `Ctrl + Alt + H`           | Call hierarchy |
+| `F2 / Shift + F2`          | Next/previous highlighted error |
+| `F4 , Ctrl + Enter`        | Jump to source |
+| `Alt + Home`               | Jump to navigation bar |
+| `F11`                      | Toggle bookmark |
+| `Ctrl + Shift + F11`       | Toggle bookmark with mnemonic |
+| `Ctrl + #[0-9]`            | Go to numbered bookmark |
+| `Shift + F11`              | Show bookmarks |
+
+## Search/Replace
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Ctrl + F`               | Find |
+| `F3`                     | Find next |
+| `Shift + F3`             | Find previous |
+| `Ctrl + Shift + F`       | Find in path |
+| `Ctrl + R`               | Replace |
+| `Ctrl + Shift + R`       | Replace in path |
+
+## Usage Search
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Alt + F7`               | Find usages |
+| `Ctrl + F7`              | Find usages in file |
+| `Ctrl + Shift + F7`      | Highlight usages in file |
+| `Ctrl + Alt + F7`        | Show usages |
+
+## Refactoring
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Ctrl + Alt + Shift + T` | Refactor this |
+| `F5 / F6`                | Copy / Move |
+| `Alt + Delete`           | Safe Delete |
+| `Shift + F6`             | Rename |
+| `Ctrl + F6`              | Change function signature |
+| `Ctrl + Alt + N`         | Inline Variable |
+| `Ctrl + Alt + M`         | Extract Method |
+| `Ctrl + Alt + V`         | Extract Variable |
+| `Ctrl + Alt + C`         | Extract Constant |
+| `Ctrl + Alt + P`         | Extract Parameter |
+
+## VCS/Local History
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Alt + BackQuote (`)`    | ‘VCS’ quick popup |
+| `Ctrl + K`               | Commit project to VCS |
+| `Ctrl + T`               | Update project from VCS |
+| `Alt + Shift + C`        | View recent changes |
+
+## General
+
+|                          |                          |
+|:-------------------------|:-------------------------|
+| `Double Shift`           | Search everywhere |
+| `Ctrl + Shift + A`       | Find Action |
+| `Alt + #[0-9]`           | Open corresponding tool window |
+| `Ctrl + Shift + F12`     | Toggle maximizing editor |
+| `Alt + Shift + F`        | Add to Favorites |
+| `Alt + Shift + I`        | Inspect current file with current profile |
+| `Ctrl + BackQuote (`)`   | Quick switch current scheme |
+| `Ctrl + Alt + S`         | Open Settings dialog |
+| `Ctrl + Tab`             | Switch between tabs and tool window |

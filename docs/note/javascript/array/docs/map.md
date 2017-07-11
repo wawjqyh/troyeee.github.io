@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">en</a>
+
 # Array.prototype.map()
 
 map() 方法创建一个新数组，其结果是该数组中的每个元素调用一个提供的函数。

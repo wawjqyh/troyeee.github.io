@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/of" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of" target="_blank">en</a>
+
 # Array.of()
 
 Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。

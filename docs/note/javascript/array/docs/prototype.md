@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype" target="_blank">en</a>
+
 # Array.prototype
 
 `Array.prototype`  属性表示 Array 构造函数的原型，并允许您向所有Array对象添加新的属性和方法

@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank">en</a>
+
 # Array.prototype.includes()
 
 includes() 方法用来判断当前数组是否包含某指定的值，如果是，则返回 true，否则返回 false。

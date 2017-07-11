@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank">en</a>
+
 # Array.prototype.shift()
 
 shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。

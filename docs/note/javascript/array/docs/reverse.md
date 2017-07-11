@@ -1,3 +1,6 @@
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank">en</a>
+
 # Array.prototype.reverse()
 
 reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。
