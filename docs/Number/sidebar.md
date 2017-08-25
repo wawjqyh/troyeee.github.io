@@ -2,8 +2,8 @@
 
 属性
 
-1. [Number.EPSILON](#docs/EPSILON)
-1. [Number.MAX_SAFE_INTEGER](#docs/MAX_SAFE_INTEGER)
+1. [Number.EPSILON \[es6\]](#docs/EPSILON)
+1. [Number.MAX_SAFE_INTEGER \[es6\]](#docs/MAX_SAFE_INTEGER)
 1. [Number.MAX_VALUE](#docs/MAX_VALUE)
 1. [Number.MIN_VALUE](#docs/MIN_VALUE)
 1. [Number.NaN](#docs/NaN)
@@ -13,7 +13,7 @@
 
 方法
 
-1. [Number.isNaN()](#docs/isNaN)
+1. [Number.isNaN() \[es6\]](#docs/isNaN)
 1. [Number.isFinite()](#docs/isFinite)
 1. [Number.isInteger()](#docs/isInteger)
 1. [Number.isSafeInteger()](#docs/isSafeInteger)
