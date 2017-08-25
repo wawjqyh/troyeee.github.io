@@ -1,33 +1,27 @@
-<a href="https://developer.mozilla.org/zh_CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean/valueOf" target="_blank">原文链接</a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/valueOf" target="_blank">en</a>
+<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf" target="_blank">原文链接</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf" target="_blank">en</a>
 
-# Boolean.prototype.valueOf()
+# String.prototype.valueOf()
 
-valueOf() 方法返回一个Boolean对象的原始值（primitive value）。
+valueOf() 方法返回一个String对象的原始值（primitive value）。
 
 ## 语法
 
 ```javascript
-bool.valueOf()
+str.valueOf()
 ```
-
-### 参数
-
-无
 
 ## 描述
 
-Boolean 的 valueOf 方法返回一个布尔对象或布尔字面量的原始值。
+String 对象的 valueOf 方法返回一个String对象的原始值。该值等同于String.prototype.toString()。
 
-该方法通常在 JavaScript 内部调用，而不是在代码中显示调用。
+该方法通常在 JavaScript 内部被调用，而不是在代码里显示调用。
 
 ## 示例
 
-例子：使用 valueOf
-
 ```javascript
-x = new Boolean();
-myVar = x.valueOf()      // assigns false to myVar
+x = new String("Hello world");
+alert(x.valueOf())          // Displays "Hello world"
 ```
 
 ## 规范
