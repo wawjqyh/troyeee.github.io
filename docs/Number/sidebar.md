@@ -14,11 +14,11 @@
 方法
 
 1. [Number.isNaN() \[es6\]](#docs/isNaN)
-1. [Number.isFinite()](#docs/isFinite)
-1. [Number.isInteger()](#docs/isInteger)
-1. [Number.isSafeInteger()](#docs/isSafeInteger)
-1. [Number.parseFloat()](#docs/parseFloat)
-1. [Number.parseInt()](#docs/parseInt)
+1. [Number.isFinite() \[es6\]](#docs/isFinite)
+1. [Number.isInteger() \[es6\]](#docs/isInteger)
+1. [Number.isSafeInteger() \[es6\]](#docs/isSafeInteger)
+1. [Number.parseFloat() \[es6\]](#docs/parseFloat)
+1. [Number.parseInt() \[es6\]](#docs/parseInt)
 1. [Number.toInteger() \[已废弃\]](#docs/toInteger)
 
 实例方法
