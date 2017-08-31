@@ -307,7 +307,7 @@ var main = {
             $(main.error).hide();
             $(main.content).html(marked(data));
 
-            normalizePaths();
+            //normalizePaths();
             createPageAnchors();
 
             // 完成代码高亮

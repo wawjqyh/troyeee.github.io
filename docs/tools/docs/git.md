@@ -186,6 +186,11 @@ $ git push origin --delete [branch-name]
 $ git branch -dr [remote/branch]
 ```
 
+**15、推送本地分支到远程**
+```javascript
+$ git push origin local_branch:remote_branch
+```
+
 ## 6、标签
 
 **1、列出所有`tag`**

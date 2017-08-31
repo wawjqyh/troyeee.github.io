@@ -30,13 +30,6 @@ x = new Boolean();
 myVar = x.valueOf()      // assigns false to myVar
 ```
 
-<a href="" target="_blank">原文链接</a>
-<a href="" target="_blank">en</a>
-
-
-
-
-
 ## 规范
 
 | Specification                           | Status   | Comment            |

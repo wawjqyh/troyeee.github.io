@@ -81,9 +81,8 @@ body {
   font-size: 16px;
 }
 #content img {
-  max-width: 90%;
+  max-width: 100%;
   display: block;
-  margin: 40px auto;
   border-radius: 5px;
 }
 #content ul {
