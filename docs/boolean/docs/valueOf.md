@@ -23,12 +23,19 @@ Boolean 的 valueOf 方法返回一个布尔对象或布尔字面量的原始值
 
 ## 示例
 
-例子：使用 valueOf
+使用 valueOf
 
 ```javascript
 x = new Boolean();
 myVar = x.valueOf()      // assigns false to myVar
 ```
+
+<a href="" target="_blank">原文链接</a>
+<a href="" target="_blank">en</a>
+
+
+
+
 
 ## 规范
 
