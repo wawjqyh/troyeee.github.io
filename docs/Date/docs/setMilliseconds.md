@@ -14,17 +14,21 @@ dateObj.setMilliseconds(millisecondsValue)
 ```
 
 ### 参数
-millisecondsValue
-一个 0 到 999 的数字，表示豪秒数。
-描述
+
+* `millisecondsValue` 一个 0 到 999 的数字，表示豪秒数
+
+## 描述
 
 如果指定的数字超出了合理范围，则日期对象的时间信息会被相应地更新。例如，如果指定了 1005，则秒数加 1，豪秒数为 5。
 
-例子
+## 例子
 
 例子：使用setMilliseconds
+
+```javascript
 var theBigDay = new Date();
 theBigDay.setMilliseconds(100);
+```
 
 ## 规范
 
