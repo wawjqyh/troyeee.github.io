@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>硬件 | 监测 | 内核 | Shell</title>
+
+    <link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 240px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="javascript:void(0)">硬件 | 监测 | 内核 | Shell</a></h1>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader orange">Shell内建命令</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/sh">sh</a></div>
+                        <div class="itemDesc">shell命令解释器</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/trap">trap</a></div>
+                        <div class="itemDesc">指定在接收到信号后将要采取的动作</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/let">let</a></div>
+                        <div class="itemDesc">简单的计算器</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/seq">seq</a></div>
+                        <div class="itemDesc">以指定增量从首数开始打印数字到尾数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/tput">tput</a></div>
+                        <div class="itemDesc">通过terminfo数据库对终端会话进行初始化和操作</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/apropos">apropos</a></div>
+                        <div class="itemDesc">在 whatis 数据库中查找字符串</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/set">set</a></div>
+                        <div class="itemDesc">显示或设置shell特性及shell变量</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/command">command</a></div>
+                        <div class="itemDesc">调用并执行指定的命令</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/dris">dris</a></div>
+                        <div class="itemDesc">显示和清空目录堆栈中的内容</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/fc">fc</a></div>
+                        <div class="itemDesc">修改历史命令并执行</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/bind">bind</a></div>
+                        <div class="itemDesc">显示或设置键盘按键与其相关的功能</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/readonly">readonly</a></div>
+                        <div class="itemDesc">定义只读shell变量或函数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/read">read</a></div>
+                        <div class="itemDesc">从键盘读取变量值</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/bg">bg</a></div>
+                        <div class="itemDesc">用于将作业放到后台运行</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/ulimit">ulimit</a></div>
+                        <div class="itemDesc">控制shell程序的资源</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/enable">enable</a></div>
+                        <div class="itemDesc">启动或关闭shell内建命令</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/declare">declare</a></div>
+                        <div class="itemDesc">声明或显示shell变量</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/wait">wait</a></div>
+                        <div class="itemDesc">等待进程执行完后返回</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/builtin">builtin</a></div>
+                        <div class="itemDesc">执行shell内部命令</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/shopt">shopt</a></div>
+                        <div class="itemDesc">显示和设置shell操作选项</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/exit">exit</a></div>
+                        <div class="itemDesc">退出当前的shell</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/jobs">jobs</a></div>
+                        <div class="itemDesc">显示Linux中的任务列表及任务状态</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/help">help</a></div>
+                        <div class="itemDesc">显示帮助信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/history">history</a></div>
+                        <div class="itemDesc">用于显示历史命令</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/logout">logout</a></div>
+                        <div class="itemDesc">退出当前登录的Shell</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/export">export</a></div>
+                        <div class="itemDesc">设置或显示系统环境变量</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/exec">exec</a></div>
+                        <div class="itemDesc">调用并执行指定的命令</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/env">env</a></div>
+                        <div class="itemDesc">显示系统中已存在的环境变量</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/unset">unset</a></div>
+                        <div class="itemDesc">删除指定的shell变量或函数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/kill">kill</a></div>
+                        <div class="itemDesc">删除执行中的程序或工作</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/unalias">unalias</a></div>
+                        <div class="itemDesc">删除由alias设置的别名</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/type">type</a></div>
+                        <div class="itemDesc">显示指定命令的类型</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/fg">fg</a></div>
+                        <div class="itemDesc">将后台作业放到前台终端运行</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/alias">alias</a></div>
+                        <div class="itemDesc">用来设置指令的别名</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/echo">echo</a></div>
+                        <div class="itemDesc">输出指定的字符串或者变量</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader cyan">性能监测与优化</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/inotifywait">inotifywait</a></div>
+                        <div class="itemDesc">异步文件系统监控机制</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/nethogs">nethogs</a></div>
+                        <div class="itemDesc">终端下的网络流量监控工具</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/ifstat">ifstat</a></div>
+                        <div class="itemDesc">统计网络接口流量状态</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/dstat">dstat</a></div>
+                        <div class="itemDesc">通用的系统资源统计工具</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/ltrace">ltrace</a></div>
+                        <div class="itemDesc">用来跟踪进程调用库函数的情况</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/iotop">iotop</a></div>
+                        <div class="itemDesc">用来监视磁盘I/O使用状况的工具</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/strace">strace</a></div>
+                        <div class="itemDesc">跟踪系统调用和信号</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/fuser">fuser</a></div>
+                        <div class="itemDesc">使用文件或文件结构识别进程</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lsof">lsof</a></div>
+                        <div class="itemDesc">显示Linux系统当前已打开的所有文件列表</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/tload">tload</a></div>
+                        <div class="itemDesc">显示系统负载状况</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/time">time</a></div>
+                        <div class="itemDesc">统计给定命令所花费的总时间</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vmstat">vmstat</a></div>
+                        <div class="itemDesc">显示虚拟内存状态</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/sar">sar</a></div>
+                        <div class="itemDesc">系统运行状态统计工具</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/mpstat">mpstat</a></div>
+                        <div class="itemDesc">显示各个可用CPU的状态</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/iostat">iostat</a></div>
+                        <div class="itemDesc">监视系统输入输出设备和CPU的使用情况</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/free">free</a></div>
+                        <div class="itemDesc">显示内存的使用情况</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/uptime">uptime</a></div>
+                        <div class="itemDesc">查看Linux系统负载信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/top">top</a></div>
+                        <div class="itemDesc">显示或管理执行中的程序</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">硬件管理</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/losetup">losetup</a></div>
+                        <div class="itemDesc">设定与控制循环（loop）设备</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/dmidecode">dmidecode</a></div>
+                        <div class="itemDesc">在Linux系统下获取有关硬件方面的信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/hwclock">hwclock</a></div>
+                        <div class="itemDesc">显示与设定硬件时钟</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/cdrecord">cdrecord</a></div>
+                        <div class="itemDesc">Linux系统下光盘刻录功能命令</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/setpci">setpci</a></div>
+                        <div class="itemDesc">查询和配置PCI设备的使用工具</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lspci">lspci</a></div>
+                        <div class="itemDesc">显示当前主机的所有PCI总线信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lsusb">lsusb</a></div>
+                        <div class="itemDesc">显示本机的USB设备列表信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/arch">arch</a></div>
+                        <div class="itemDesc">显示当前主机的硬件架构类型</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/volname">volname</a></div>
+                        <div class="itemDesc">显示指定的ISO-9660格式的设备的卷名称</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/systool">systool</a></div>
+                        <div class="itemDesc">显示基于总线、类和拓扑显示系统中设备的信息</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader red">内核与模块管理</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lsb_release">lsb_release</a></div>
+                        <div class="itemDesc">显示发行版本信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/sysctl">sysctl</a></div>
+                        <div class="itemDesc">时动态地修改内核的运行参数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/slabtop">slabtop</a></div>
+                        <div class="itemDesc">实时显示内核slab内存缓存信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/kernelversion">kernelversion</a></div>
+                        <div class="itemDesc">打印当前内核的主版本号</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/get_module">get_module</a></div>
+                        <div class="itemDesc">获取Linux内核模块的详细信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/kexec">kexec</a></div>
+                        <div class="itemDesc">从当前正在运行的内核引导到一个新内核</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/dmesg">dmesg</a></div>
+                        <div class="itemDesc">显示Linux系统启动信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/uname">uname</a></div>
+                        <div class="itemDesc">显示Linux系统信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/depmod">depmod</a></div>
+                        <div class="itemDesc">分析可载入模块的相依性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/bmodinfo">bmodinfo</a></div>
+                        <div class="itemDesc">显示给定模块的详细信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/modprobe">modprobe</a></div>
+                        <div class="itemDesc">自动处理可载入模块</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/rmmod">rmmod</a></div>
+                        <div class="itemDesc">从运行的内核中移除指定的内核模块</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/insmod">insmod</a></div>
+                        <div class="itemDesc">将给定的模块加载到内核中</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lsmod">lsmod</a></div>
+                        <div class="itemDesc">显示已载入系统的模块</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader green">磁盘管理</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/blkid">blkid</a></div>
+                        <div class="itemDesc">查看块设备的文件系统类型、LABEL、UUID等信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/du">du</a></div>
+                        <div class="itemDesc">显示每个文件和目录的磁盘使用空间</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lsblk">lsblk</a></div>
+                        <div class="itemDesc">列出块设备信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgremove">vgremove</a></div>
+                        <div class="itemDesc">用于用户删除LVM卷组</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvresize">lvresize</a></div>
+                        <div class="itemDesc">调整逻辑卷空间大小</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvremove">lvremove</a></div>
+                        <div class="itemDesc">删除指定LVM逻辑卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvreduce">lvreduce</a></div>
+                        <div class="itemDesc">收缩逻辑卷空间</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvs">pvs</a></div>
+                        <div class="itemDesc">输出物理卷信息报表</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvchange">pvchange</a></div>
+                        <div class="itemDesc">修改物理卷属性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvck">pvck</a></div>
+                        <div class="itemDesc">检测物理卷的LVM元数据的一致性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvremove">pvremove</a></div>
+                        <div class="itemDesc">删除一个存在的物理卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvextend">lvextend</a></div>
+                        <div class="itemDesc">扩展逻辑卷空间</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvdisplay">pvdisplay</a></div>
+                        <div class="itemDesc">显示物理卷的属性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvdisplay">lvdisplay</a></div>
+                        <div class="itemDesc">显示逻辑卷属性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvscan">pvscan</a></div>
+                        <div class="itemDesc">扫描系统中所有硬盘的物理卷列表</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvscan">lvscan</a></div>
+                        <div class="itemDesc">扫描逻辑卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lvcreate">lvcreate</a></div>
+                        <div class="itemDesc">用于创建LVM的逻辑卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/pvcreate">pvcreate</a></div>
+                        <div class="itemDesc">将物理硬盘分区初始化为物理卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgconvert">vgconvert</a></div>
+                        <div class="itemDesc">转换卷组元数据格式</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/blockdev">blockdev</a></div>
+                        <div class="itemDesc">从命令行调用区块设备控制程序</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/mkswap">mkswap</a></div>
+                        <div class="itemDesc">建立和设置SWAP交换分区</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgchange">vgchange</a></div>
+                        <div class="itemDesc">修改卷组属性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/mknod">mknod</a></div>
+                        <div class="itemDesc">创建字符设备文件和块设备文件</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/mkisofs">mkisofs</a></div>
+                        <div class="itemDesc">建立ISO 9660映像文件</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/mkinitrd">mkinitrd</a></div>
+                        <div class="itemDesc">建立要载入ramdisk的映像文件</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgreduce">vgreduce</a></div>
+                        <div class="itemDesc">从卷组中删除物理卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/hdparm">hdparm</a></div>
+                        <div class="itemDesc">显示与设定硬盘的参数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgextend">vgextend</a></div>
+                        <div class="itemDesc">向卷组中添加物理卷</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/partprobe">partprobe</a></div>
+                        <div class="itemDesc">不重启的情况下重读分区</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgscan">vgscan</a></div>
+                        <div class="itemDesc">扫描并显示系统中的卷组</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgcreate">vgcreate</a></div>
+                        <div class="itemDesc">用于创建LVM卷组</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/fdisk">fdisk</a></div>
+                        <div class="itemDesc">查看磁盘使用情况和磁盘分区</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/badblocks">badblocks</a></div>
+                        <div class="itemDesc">查找磁盘中损坏的区块</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/vgdisplay">vgdisplay</a></div>
+                        <div class="itemDesc">显示LVM卷组的信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/mkbootdisk">mkbootdisk</a></div>
+                        <div class="itemDesc">可建立目前系统的启动盘</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/grub">grub</a></div>
+                        <div class="itemDesc">多重引导程序grub的命令行shell工具</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/convertquota">convertquota</a></div>
+                        <div class="itemDesc">把老的配额文件转换为新的格式</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/lilo">lilo</a></div>
+                        <div class="itemDesc">安装核心载入开机管理程序</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/df">df</a></div>
+                        <div class="itemDesc">显示磁盘的相关信息</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="http://man.linuxde.net/parted">parted</a></div>
+                        <div class="itemDesc">磁盘分区和分区大小调整工具</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/guide/jsList.html">返回</a>
+</div>
+</body>
+</html>
