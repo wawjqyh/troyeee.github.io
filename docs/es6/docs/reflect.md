@@ -84,15 +84,15 @@ Reflect.apply(Math.floor, undefined, [1.75]) // 1
 
 ## 静态方法
 
-`Reflect`对象一共有13个静态方法。
+`Reflect`对象一共有 13 个静态方法。
 
-- Reflect.apply(target,thisArg,args)
-- Reflect.construct(target,args)
-- Reflect.get(target,name,receiver)
-- Reflect.set(target,name,value,receiver)
-- Reflect.defineProperty(target,name,desc)
-- Reflect.deleteProperty(target,name)
-- Reflect.has(target,name)
+- Reflect.apply(target, thisArg, args)
+- Reflect.construct(target, args)
+- Reflect.get(target, name, receiver)
+- Reflect.set(target, name, value, receiver)
+- Reflect.defineProperty(target, name, desc)
+- Reflect.deleteProperty(target, name)
+- Reflect.has(target, name)
 - Reflect.ownKeys(target)
 - Reflect.isExtensible(target)
 - Reflect.preventExtensions(target)
@@ -184,6 +184,53 @@ var myReceiverObject = {
 Reflect.set(myObject, 'bar', 1, myReceiverObject);
 myObject.foo // 4
 myReceiverObject.foo // 1
+```
+
+注意，如果 Proxy 对象和 Reflect 对象联合使用，前者拦截赋值操作，后者完成赋值的默认行为，而且传入了`receiver`，那么`Reflect.set`会触发`Proxy.defineProperty`拦截。
+
+```javascript
+let p = {
+  a: 'a'
+};
+
+let handler = {
+  set(target, key, value, receiver) {
+    console.log('set');
+    Reflect.set(target, key, value, receiver)
+  },
+  defineProperty(target, key, attribute) {
+    console.log('defineProperty');
+    Reflect.defineProperty(target, key, attribute);
+  }
+};
+
+let obj = new Proxy(p, handler);
+obj.a = 'A';
+// set
+// defineProperty
+```
+
+上面代码中，`Proxy.set`拦截里面使用了`Reflect.set`，而且传入了`receiver`，导致触发`Proxy.defineProperty`拦截。这是因为`Proxy.set`的`receiver`参数总是指向当前的 Proxy 实例（即上例的`obj`），而`Reflect.set`一旦传入`receiver`，就会将属性赋值到`receiver`上面（即`obj`），导致触发`defineProperty`拦截。如果`Reflect.set`没有传入`receiver`，那么就不会触发`defineProperty`拦截。
+
+```javascript
+let p = {
+  a: 'a'
+};
+
+let handler = {
+  set(target, key, value, receiver) {
+    console.log('set');
+    Reflect.set(target, key, value)
+  },
+  defineProperty(target, key, attribute) {
+    console.log('defineProperty');
+    Reflect.defineProperty(target, key, attribute);
+  }
+};
+
+let obj = new Proxy(p, handler);
+obj.a = 'A';
+// set
 ```
 
 如果第一个参数不是对象，`Reflect.set`会报错。
@@ -315,7 +362,7 @@ const type = Object.prototype.toString.call(youngest);
 // 新写法
 const youngest = Reflect.apply(Math.min, Math, ages);
 const oldest = Reflect.apply(Math.max, Math, ages);
-const type = Reflect.apply(Object.prototype.toString, youngest);
+const type = Reflect.apply(Object.prototype.toString, youngest, []);
 ```
 
 ### Reflect.defineProperty(target, propertyKey, attributes)
@@ -329,12 +376,12 @@ function MyDate() {
 
 // 旧写法
 Object.defineProperty(MyDate, 'now', {
-  value: () => new Date.now()
+  value: () => Date.now()
 });
 
 // 新写法
 Reflect.defineProperty(MyDate, 'now', {
-  value: () => new Date.now()
+  value: () => Date.now()
 });
 ```
 
@@ -389,19 +436,19 @@ Reflect.isExtensible(1) // 报错
 var myObject = {};
 
 // 旧写法
-Object.isExtensible(myObject) // true
+Object.preventExtensions(myObject) // Object {}
 
 // 新写法
 Reflect.preventExtensions(myObject) // true
 ```
 
-如果参数不是对象，`Object.isExtensible`在 ES5 环境报错，在 ES6 环境返回这个参数，而`Reflect.preventExtensions`会报错。
+如果参数不是对象，`Object.preventExtensions`在 ES5 环境报错，在 ES6 环境返回传入的参数，而`Reflect.preventExtensions`会报错。
 
 ```javascript
-// ES5
+// ES5 环境
 Object.preventExtensions(1) // 报错
 
-// ES6
+// ES6 环境
 Object.preventExtensions(1) // 1
 
 // 新写法
@@ -425,11 +472,11 @@ Object.getOwnPropertyNames(myObject)
 // ['foo', 'bar']
 
 Object.getOwnPropertySymbols(myObject)
-//[Symbol.for('baz'), Symbol.for('bing')]
+//[Symbol(baz), Symbol(bing)]
 
 // 新写法
 Reflect.ownKeys(myObject)
-// ['foo', 'bar', Symbol.for('baz'), Symbol.for('bing')]
+// ['foo', 'bar', Symbol(baz), Symbol(bing)]
 ```
 
 ## 实例：使用 Proxy 实现观察者模式
@@ -470,4 +517,3 @@ function set(target, key, value, receiver) {
 ```
 
 上面代码中，先定义了一个`Set`集合，所有观察者函数都放进这个集合。然后，`observable`函数返回原始对象的代理，拦截赋值操作。拦截函数`set`之中，会自动执行所有观察者。
-

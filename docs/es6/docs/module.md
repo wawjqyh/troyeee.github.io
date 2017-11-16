@@ -19,7 +19,7 @@ let exists = _fs.exists;
 let readfile = _fs.readfile;
 ```
 
-上面代码的实质是整体加载`fs`模块（即加载`fs`的所有方法），生成一个对象（`_fs`），然后再从这个对象上面读取3个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。
+上面代码的实质是整体加载`fs`模块（即加载`fs`的所有方法），生成一个对象（`_fs`），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。
 
 ES6 模块不是对象，而是通过`export`命令显式指定输出的代码，再通过`import`命令输入。
 
@@ -28,7 +28,7 @@ ES6 模块不是对象，而是通过`export`命令显式指定输出的代码�
 import { stat, exists, readFile } from 'fs';
 ```
 
-上面代码的实质是从`fs`模块加载3个方法，其他方法不加载。这种加载称为“编译时加载”或者静态加载，即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。当然，这也导致了没法引用 ES6 模块本身，因为它不是对象。
+上面代码的实质是从`fs`模块加载 3 个方法，其他方法不加载。这种加载称为“编译时加载”或者静态加载，即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。当然，这也导致了没法引用 ES6 模块本身，因为它不是对象。
 
 由于 ES6 模块是编译时加载，使得静态分析成为可能。有了它，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型检验（type system）这些只能靠静态分析实现的功能。
 
@@ -50,7 +50,7 @@ ES6 的模块自动采用严格模式，不管你有没有在模块头部加上`
 - 函数的参数不能有同名属性，否则报错
 - 不能使用`with`语句
 - 不能对只读属性赋值，否则报错
-- 不能使用前缀0表示八进制数，否则报错
+- 不能使用前缀 0 表示八进制数，否则报错
 - 不能删除不可删除的属性，否则报错
 - 不能删除变量`delete prop`，会报错，只能删除属性`delete global[prop]`
 - `eval`不会在它的外层作用域引入变量
@@ -130,7 +130,7 @@ var m = 1;
 export m;
 ```
 
-上面两种写法都会报错，因为没有提供对外的接口。第一种写法直接输出1，第二种写法通过变量`m`，还是直接输出1。`1`只是一个值，不是接口。正确的写法是下面这样。
+上面两种写法都会报错，因为没有提供对外的接口。第一种写法直接输出 1，第二种写法通过变量`m`，还是直接输出 1。`1`只是一个值，不是接口。正确的写法是下面这样。
 
 ```javascript
 // 写法一
@@ -169,11 +169,11 @@ export var foo = 'bar';
 setTimeout(() => foo = 'baz', 500);
 ```
 
-上面代码输出变量`foo`，值为`bar`，500毫秒之后变成`baz`。
+上面代码输出变量`foo`，值为`bar`，500 毫秒之后变成`baz`。
 
-这一点与 CommonJS 规范完全不同。CommonJS 模块输出的是值的缓存，不存在动态更新，详见下文《ES6模块加载的实质》一节。
+这一点与 CommonJS 规范完全不同。CommonJS 模块输出的是值的缓存，不存在动态更新，详见下文《Module 的加载实现》一节。
 
-最后，`export`命令可以出现在模块的任何位置，只要处于模块顶层就可以。如果处于块级作用域内，就会报错，下一节的`import`命令也是如此。这是因为处于条件代码块之中，就没法做静态优化了，违背了ES6模块的设计初衷。
+最后，`export`命令可以出现在模块的任何位置，只要处于模块顶层就可以。如果处于块级作用域内，就会报错，下一节的`import`命令也是如此。这是因为处于条件代码块之中，就没法做静态优化了，违背了 ES6 模块的设计初衷。
 
 ```javascript
 function foo() {
@@ -205,7 +205,7 @@ function setName(element) {
 import { lastName as surname } from './profile';
 ```
 
-`import`后面的`from`指定模块文件的位置，可以是相对路径，也可以是绝对路径，`.js`路径可以省略。如果只是模块名，不带有路径，那么必须有配置文件，告诉 JavaScript 引擎该模块的位置。
+`import`后面的`from`指定模块文件的位置，可以是相对路径，也可以是绝对路径，`.js`后缀可以省略。如果只是模块名，不带有路径，那么必须有配置文件，告诉 JavaScript 引擎该模块的位置。
 
 ```javascript
 import {myMethod} from 'util';
@@ -269,6 +269,14 @@ import { foo, bar } from 'my_module';
 ```
 
 上面代码中，虽然`foo`和`bar`在两个语句中加载，但是它们对应的是同一个`my_module`实例。也就是说，`import`语句是 Singleton 模式。
+
+目前阶段，通过 Babel 转码，CommonJS 模块的`require`命令和 ES6 模块的`import`命令，可以写在同一个模块里面，但是最好不要这样做。因为`import`在静态解析阶段执行，所以它是一个模块之中最早执行的。下面的代码可能不会得到预期结果。
+
+```javascript
+require('core-js/modules/es6.symbol');
+require('core-js/modules/es6.promise');
+import React from 'React';
+```
 
 ## 模块的整体加载
 
@@ -396,9 +404,9 @@ export {add as default};
 // export default add;
 
 // app.js
-import { default as xxx } from 'modules';
+import { default as foo } from 'modules';
 // 等同于
-// import xxx from 'modules';
+// import foo from 'modules';
 ```
 
 正是因为`export default`命令其实只是输出一个叫做`default`的变量，所以它后面不能跟变量声明语句。
@@ -435,10 +443,10 @@ export 42;
 import _ from 'lodash';
 ```
 
-如果想在一条`import`语句中，同时输入默认方法和其他变量，可以写成下面这样。
+如果想在一条`import`语句中，同时输入默认方法和其他接口，可以写成下面这样。
 
 ```javascript
-import _, { each } from 'lodash';
+import _, { each, each as forEach } from 'lodash';
 ```
 
 对应上面代码的`export`语句如下。
@@ -617,7 +625,7 @@ export {users} from './users';
 
 ```javascript
 // script.js
-import {db, users} from './constants';
+import {db, users} from './index';
 ```
 
 ## import()
@@ -635,7 +643,7 @@ if (x === 2) {
 
 上面代码中，引擎处理`import`语句是在编译时，这时不会去分析或执行`if`语句，所以`import`语句放在`if`代码块之中毫无意义，因此会报句法错误，而不是执行时错误。也就是说，`import`和`export`命令只能在模块的顶层，不能在代码块之中（比如，在`if`代码块之中，或在函数之中）。
 
-这样的设计，固然有利于编译器提高效率，但也导致无法在运行时加载模块。从语法上，条件加载就不可能实现。如果`import`命令要取代 Node 的`require`方法，这就形成了一个障碍。因为`require`是运行时加载模块，`import`命令无法取代`require`的动态加载功能。
+这样的设计，固然有利于编译器提高效率，但也导致无法在运行时加载模块。在语法上，条件加载就不可能实现。如果`import`命令要取代 Node 的`require`方法，这就形成了一个障碍。因为`require`是运行时加载模块，`import`命令无法取代`require`的动态加载功能。
 
 ```javascript
 const path = './' + fileName;
@@ -776,4 +784,3 @@ async function main() {
 }
 main();
 ```
-
