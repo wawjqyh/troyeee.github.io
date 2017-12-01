@@ -11,3 +11,4 @@
 1. [帮助命令](#docs/help)
 1. [vi编辑器](#docs/vim)
 1. [用户管理](#docs/user)
+1. [软件管理](#docs/software)
