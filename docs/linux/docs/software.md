@@ -76,12 +76,28 @@ rpm -ivh 包全名
 rpm -Uvh 包全名
 ```
 
-#### 选项
-
 * `-U(upgrade)` 升级
 
 <p class="warning">如果原软件包不存在，则该命令相当于安装命令，如果存在则为升级</p>
 
+```javascript
+rpm -e 包名
+```
+
+* `-e(erase)` 卸载
+* `--nodeps` 不检测依赖性
+
 ### RPM包查询
+
+```javascript
+rpm -q 包名              //查询包是否安装
+rpm -qa                  //查询所有已安装的RPM包
+rpm -qi 包名             //查询软件包的详细信息
+rpm -ql 包名             //查询包中文件安装位置
+rpm -qf 系统文件名        //查询系统文件属于哪个包
+rpm -qR 包名             //查询软件包的依赖性
+```
+
+* `-p` 查询未安装包的信息
 
 ### RPM包校验
