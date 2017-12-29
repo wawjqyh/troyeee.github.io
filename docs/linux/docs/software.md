@@ -94,10 +94,118 @@ rpm -q 包名              //查询包是否安装
 rpm -qa                  //查询所有已安装的RPM包
 rpm -qi 包名             //查询软件包的详细信息
 rpm -ql 包名             //查询包中文件安装位置
-rpm -qf 系统文件名        //查询系统文件属于哪个包
+rpm -qf 系统文件名       //查询系统文件属于哪个包
 rpm -qR 包名             //查询软件包的依赖性
 ```
 
 * `-p` 查询未安装包的信息
 
+#### RPM包默认安装位置
+
+|                  |                            |
+|:-----------------|:---------------------------|
+| /etc/            | 配置文件安装目录           |
+| /user/bin/       | 可执行的命令安装目录       |
+| /user/lib/       | 程序所使用的函数库保存位置 |
+| /user/share/doc/ | 基本的软件使用手册保存位置 |
+| /user/share/man/ | 帮助文件保存位置           |
+
 ### RPM包校验
+
+```javascript
+rpm -V 已安装的包名       //校验指定RPM包中的文件（verify）
+```
+
+#### 验证内容中的信息
+
+* `S` 文件大小是否改变
+* `M` 文件的类型或文件的权限（rwx）是否改变
+* `5` 文件MD5校验和是否改变（可以看成文件内容是否改变）
+* `D` 设备的主从代码是否改变
+* `L` 文件路径是否改变
+* `U` 文件的属主（所有者）是否改变
+* `G` 文件的属组是否改变
+* `T` 文件的修改时间是否改变
+
+#### 文件类型
+
+* `c` 配置文件（config file）
+* `d` 普通文件（documentation）
+* `g` ghost file，该文件不应该被这个RPM包包含
+* `L` 授权文件（license file）
+* `r` 描述文件（read me）
+
+## yum在线安装
+
+将所有软件包放到官方服务器上，当进行yum在线安装时，可以自动解决依赖心问题
+
+### yum源文件
+
+即yum配置文件
+
+#### 文件位置
+
+```javascript
+vi /etc/yum.repos.d/CentOS-Base.repo
+```
+
+* `[base]` 容器名称，一定要放在[]中
+* `name` 容器说明，可以自己随便写
+* `mirrorlist` 镜像站点，这个可以注释掉
+* `baseurl` yum源服务器的地址。默认是CentOS官方的yum源服务器，是可以使用的，可以改成其他的yum源地址
+* `enabled` 此容器是否生效，如果不写或写成enable=1都是生效，写成enable=0就是不生效
+* `gpgcheck` 如果是1是指RPM的数字证书生效，如果是0则不生效
+* `gpgkey` 数字证书的公钥文件保存位置。不用修改
+
+### 光盘搭建yum源
+
+#### 挂载光盘
+
+```javascript
+mkdir /mnt/cdrom                //建立挂载点
+mount /dev/cdrom /mnt/cdrom/    //挂载光盘
+```
+
+#### 修改yum源
+
+使网络yum源失效，即删除 CentOS-Base.repo 文件。然后修改光盘yum源，即CentOS-Media.repo
+
+### yum命令
+
+#### 查询
+
+```javascript
+yum list                    //查询所有可用软件包列表
+yum search 关键字           //搜索服务器上所有和关键字相关的包
+```
+
+#### 安装
+
+```javascript
+yum -y install 包名
+```
+
+选项
+
+* `install`     //安装
+* `-y`          //自动回答yes
+
+#### 升级
+
+```javascript
+yum -y update 包名
+```
+
+#### 卸载
+
+```javascript
+yum -y remove
+```
+
+#### 软件组管理
+
+```javascript
+yum grouplist               //列出所有可用的软件组列表
+yum groupinstall 软件组名   //安装指定软件组，组名可以有grouplist查询出来
+yum groupremove 软件组名    //卸载指定软件组
+```
