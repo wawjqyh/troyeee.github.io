@@ -12,4 +12,4 @@
 1. [vi编辑器](#docs/vim)
 1. [用户管理](#docs/user)
 1. [软件管理](#docs/software)
-1. [网络基础](#docs/network)
+1. [远程登录](#docs/telnet)
