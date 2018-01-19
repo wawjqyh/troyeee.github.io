@@ -15,3 +15,4 @@
 1. [远程登录](#docs/telnet)
 1. [网络配置](#docs/netConf)
 1. [firewall](#docs/firewall)
+1. [shell](#docs/shell)
