@@ -1,5 +1,7 @@
 # wawjqyh.github.io
 
+[在线文档](http://wawjqyh.github.io)
+
 js文档
 
 es6文档
