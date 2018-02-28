@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>javascript</title>
+
+    <link href="../../src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="../../src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 240px;
+        }
+
+        .bigLick li {
+            color: #0fa4ff !important;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>javascript内置对象</h1>
+
+    <div class="pageDesc">这里的”全局对象“（global objects）（或者标准内置对象）指的是在全局作用域（global scope）中的对象
+        （仅当未使用 ECMAScript 5 严格模式时！否则只会得到undefined）。全局对象本身可通过 this 操作符在全局作用域中获得。实际上，
+        全局作用域就是由全局对象的各个属性组成的（包括继承来的属性）。在全局作用域中的其他对象，要么是用户自己创建的，要么是宿主应用提供的。
+    </div>
+
+    <div class="colCon">
+        <!--1-->
+        <div class="col">
+            <div class="li">
+                <a href="/docs/javascript/valProperty">
+                    <div class="noteHeader orange">值属性</div>
+                    <div class="desc">这些全局属性返回一个简单的值；他们没有属性和方法</div>
+                    <ul class="bigLick">
+                        <li>Infinity</li>
+                        <li>NaN</li>
+                        <li>undefined</li>
+                        <li>null</li>
+                    </ul>
+                </a>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader blue">结构化数据</div>
+                <div class="desc">这种数据类型可以用来表示结构化数据缓存或者JSON数据，并允许与其进行交互</div>
+                <ul>
+                    <li>ArrayBuffer</li>
+                    <li>SharedArrayBuffer[草案]</li>
+                    <li>Atomics[草案]</li>
+                    <li>DataView</li>
+                    <li>JSON</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--2-->
+        <div class="col">
+            <div class="li">
+                <a href="/docs/javascript/functionProperty">
+                    <div class="noteHeader cyan">函数属性</div>
+                    <div class="desc">执行特定功能并返回结果的全局方法</div>
+                    <ul class="bigLick">
+                        <li>eval()</li>
+                        <li>uneval()[非标准]</li>
+                        <li>isFinite()</li>
+                        <li>isNaN()</li>
+                        <li>parseFloat()</li>
+                        <li>parseInt()</li>
+                        <li>encodeURI()</li>
+                        <li>decodeURI()</li>
+                        <li>encodeURIComponent()</li>
+                        <li>decodeURIComponent()</li>
+                        <li>escape()[已丢弃]</li>
+                        <li>unescape()[已丢弃]</li>
+                    </ul>
+                </a>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader cyan">控制抽象对象</div>
+                <div class="desc">控制抽象对象</div>
+                <ul>
+                    <li>Promise</li>
+                    <li>Generator</li>
+                    <li>GeneratorFunction</li>
+                    <li>AsyncFunction[草案]</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--3-->
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">基本对象</div>
+                <div class="desc">基础的语言对象、方法对象和错误对象</div>
+                <ul>
+                    <li><a href="/docs/javascript/object/object.html" class="link">Object</a></li>
+                    <li><a href="/docs/javascript/function/function.html" class="link">Function</a></li>
+                    <li><a href="/docs/javascript/boolean" class="link">Boolean</a></li>
+                    <li>Symbol</li>
+                    <li>Error</li>
+                    <li>EvalError</li>
+                    <li>InternalError</li>
+                    <li>RangeError</li>
+                    <li>ReferenceError</li>
+                    <li>SyntaxError</li>
+                    <li>TypeError</li>
+                    <li>URIError</li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader red">反射</div>
+                <div class="desc">反射</div>
+                <ul>
+                    <li>Reflect</li>
+                    <li>Proxy</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--4-->
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader red">数字和日期</div>
+                <div class="desc">用于处理数字、日期和数学运算的对象</div>
+                <ul>
+                    <li><a href="/docs/javascript/Number/Number.html" class="link">Number</a></li>
+                    <li><a href="/docs/javascript/Math/Math.html" class="link">Math</a></li>
+                    <li><a href="/docs/javascript/Date/Date.html" class="link">Date</a></li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader orange">键控集合</div>
+                <div class="desc">根据键来保存对象的集合，遍历时会根据放入的顺序</div>
+                <ul>
+                    <li>Map</li>
+                    <li>Set</li>
+                    <li>WeakMap</li>
+                    <li>WeakSet</li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <a href="javascript:void(0)">
+                    <div class="noteHeader purple">其他</div>
+                    <div class="desc">其他</div>
+                    <ul>
+                        <li>arguments</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+
+        <!--5-->
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader green">文本处理</div>
+                <div class="desc">用于处理文本的对象</div>
+                <ul>
+                    <li><a href="/docs/javascript/string/string.html" class="link">String</a></li>
+                    <li><a href="/docs/javascript/RegExp" class="link">RegExp</a></li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader purple">索引集合</div>
+                <div class="desc">根据索引来排列的集合，类似于数组的对象</div>
+                <ul>
+                    <li><a href="/docs/javascript/array/array.html" class="link">Array</a></li>
+                    <li>Int8Array</li>
+                    <li>Uint8Array</li>
+                    <li>Uint8ClampedArray</li>
+                    <li>Int16Array</li>
+                    <li>Uint16Array</li>
+                    <li>Int32Array</li>
+                    <li>Uint32Array</li>
+                    <li>Float32Array</li>
+                    <li>Float64Array</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+</div>
+</body>
+</html>

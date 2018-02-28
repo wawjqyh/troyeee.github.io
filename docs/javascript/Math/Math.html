@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Math</title>
+
+    <link href="/src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="/docs/javascript/Math#docs/Math">Math</a></h1>
+
+    <div class="pageDesc">与其它全局对象不同的是, Math 不是一个构造器. Math 的所有属性和方法都是静态的. 你用到的常数pi可以用 Math.PI 表示,用 x 作参数
+        Math.sin(x)调用sin函数. JavaScript中的常数, 是以全精度的实数定义的.
+    </div>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader orange">属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/E">Math.E</a></div>
+                        <div class="itemDesc">欧拉常数，也是自然对数的底数, 约等于 2.718</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/LN2">Math.LN2</a></div>
+                        <div class="itemDesc">2的自然对数, 约等于0.693</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/LN10">Math.LN10</a></div>
+                        <div class="itemDesc">10的自然对数, 约等于 2.303</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/LOG2E">Math.LOG2E</a></div>
+                        <div class="itemDesc">以2为底E的对数, 约等于 1.443</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/LOG10E">Math.LOG10E</a></div>
+                        <div class="itemDesc">以10为底E的对数, 约等于 0.434</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/PI">Math.PI</a></div>
+                        <div class="itemDesc">圆周率，一个圆的周长和直径之比，约等于 3.14159</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/SQRT1_2">Math.SQRT1_2</a></div>
+                        <div class="itemDesc">1/2的平方根, 约等于 0.707</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/SQRT2">Math.SQRT2</a></div>
+                        <div class="itemDesc">2的平方根,约等于 1.414</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/abs">Math.abs(x)</a></div>
+                        <div class="itemDesc">绝对值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/acos">Math.acos(x)</a></div>
+                        <div class="itemDesc">反余弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/acosh">Math.acosh(x) [es6]</a></div>
+                        <div class="itemDesc">反双曲余弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/asin">Math.asin(x)</a></div>
+                        <div class="itemDesc">反正弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/asinh">Math.asinh(x) [es6]</a></div>
+                        <div class="itemDesc">反双曲正弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/atan">Math.atan(x)</a></div>
+                        <div class="itemDesc">以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/atanh">Math.atanh(x) [es6]</a></div>
+                        <div class="itemDesc">反双曲正切值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/atan2">Math.atan2(x, y)</a></div>
+                        <div class="itemDesc">y/x 的反正切值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/cbrt">Math.cbrt(x) [es6]</a></div>
+                        <div class="itemDesc">立方根</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/ceil">Math.ceil(x)</a></div>
+                        <div class="itemDesc">向上取整</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/clz32">Math.clz32(x) [es6]</a></div>
+                        <div class="itemDesc">返回一个数字在转换成 32 无符号整形数字的二进制形式后, 开头的 0 的个数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/cos">Math.cos(x)</a></div>
+                        <div class="itemDesc">余弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/cosh">Math.cosh(x) [es6]</a></div>
+                        <div class="itemDesc">双曲余弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/exp">Math.exp(x)</a></div>
+                        <div class="itemDesc">返回 Ex, 当x为参数, E 是欧拉常数 (2.718...), 自然对数的底</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/expm1">Math.expm1(x) [es6]</a></div>
+                        <div class="itemDesc">exp(x)-1 的值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/floor">Math.floor(x)</a></div>
+                        <div class="itemDesc">向下取整</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/fround">Math.fround(x) [es6]</a></div>
+                        <div class="itemDesc">将任意的数字转换为离它最近的单精度浮点数形式的数字</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/hypot">Math.hypot([x[,y[,…]]]) [es6]</a></div>
+                        <div class="itemDesc">返回它的所有参数的平方和的平方根</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/imul">Math.imul(x) [es6]</a></div>
+                        <div class="itemDesc">返回两个参数的类C的32位整数乘法运算的运算结果</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/log">Math.log(x)</a></div>
+                        <div class="itemDesc">返回一个数的自然对数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/log1p">Math.log1p(x) [es6]</a></div>
+                        <div class="itemDesc">返回一个数的自然对数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/log10">Math.log10(x) [es6]</a></div>
+                        <div class="itemDesc">返回一个数字以 10 为底的对数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/log2">Math.log2(x) [es6]</a></div>
+                        <div class="itemDesc">返回一个数字以 2 为底的对数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/max">Math.max([x[,y[,…]]])</a></div>
+                        <div class="itemDesc">返回0个到多个数值中最大值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/min">Math.min([x[,y[,…]]])</a></div>
+                        <div class="itemDesc">返回0个到多个数值中最小值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/pow">Math.pow(x,y)</a></div>
+                        <div class="itemDesc">返回x的y次幂</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/random">Math.random()</a></div>
+                        <div class="itemDesc">返回0到1之间的伪随机数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/round">Math.round(x)</a></div>
+                        <div class="itemDesc">返回四舍五入后的整数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/sign">Math.sign(x) [es6]</a></div>
+                        <div class="itemDesc">返回x的符号函数, 判定x是正数,负数还是0</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/sin">Math.sin(x)</a></div>
+                        <div class="itemDesc">返回正弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/sinh">Math.sinh(x) [es6]</a></div>
+                        <div class="itemDesc">返回x的双曲正弦值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/sqrt">Math.sqrt(x)</a></div>
+                        <div class="itemDesc">返回x的平方根</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/tan">Math.tan(x)</a></div>
+                        <div class="itemDesc">返回x的正切值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/tanh">Math.tanh(x) [es6]</a></div>
+                        <div class="itemDesc">返回x的双曲正切值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/toSource">Math.toSource()</a></div>
+                        <div class="itemDesc">返回字符串 "Math"</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Math#docs/trunc">Math.trunc(x) [es6]</a></div>
+                        <div class="itemDesc">返回x的整数部分,去除小数</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/docs/javascript/javascript.html">返回</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>String</title>
+
+    <link href="/src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="/docs/javascript/string#docs/string">String</a></h1>
+
+    <div class="pageDesc">String 全局对象是一个用于字符串或一个字符序列的构造函数</div>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/prototype">String.prototype</a></div>
+                        <div class="itemDesc">可以为 String 对象增加新的属性</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader orange">实例属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/constructor">String.prototype.constructor</a></div>
+                        <div class="itemDesc">用于创造对象的原型对象的特定的函数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/length">String.prototype.length</a></div>
+                        <div class="itemDesc">返回了字符串的长度</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader cyan">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/fromCharCode">String.fromCharCode()</a></div>
+                        <div class="itemDesc">通过一串 Unicode 创建字符串</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/fromCodePoint">String.fromCodePoint() [es6]</a></div>
+                        <div class="itemDesc">通过一串 码点 创建字符串</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/raw">String.raw() [es6]</a></div>
+                        <div class="itemDesc">通过模板字符串穿创建字符串</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader red">实例方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/charAt">charAt()</a></div>
+                        <div class="itemDesc">返回特定位置的字符</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/charCodeAt">charCodeAt()</a></div>
+                        <div class="itemDesc">返回表示给定索引的字符的Unicode的值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/codePointAt">codePointAt() [es6]</a></div>
+                        <div class="itemDesc">返回使用UTF-16编码的给定位置的值的非负整数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/concat">concat()</a></div>
+                        <div class="itemDesc">连接两个字符串文本，并返回一个新的字符串</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/includes">includes() [es6]</a></div>
+                        <div class="itemDesc">判断一个字符串里是否包含其他字符串</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/endsWith">endsWith() [es6]</a></div>
+                        <div class="itemDesc">判断一个字符串的结尾是否包含其他字符串中的字符</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/indexOf">indexOf()</a></div>
+                        <div class="itemDesc">从字符串对象中返回首个被发现的给定值的索引值，如果没有找到则返回-1</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/lastIndexOf">lastIndexOf()</a></div>
+                        <div class="itemDesc">从字符串对象中返回最后一个被发现的给定值的索引值，如果没有找到则返回-1</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/localeCompare">localeCompare()</a></div>
+                        <div class="itemDesc">返回一个数字表示是否引用字符串在排序中位于比较字符串的前面，后面，或者二者相同</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/match">match()</a></div>
+                        <div class="itemDesc">使用正则表达式与字符串相比较</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/normalize">normalize() [es6]</a></div>
+                        <div class="itemDesc">返回调用字符串值的Unicode标准化形式</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/repeat">repeat() [es6]</a></div>
+                        <div class="itemDesc">返回指定重复次数的由元素组成的字符串对象</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/replace">replace()</a></div>
+                        <div class="itemDesc">被用来在正则表达式和字符串直接比较，然后用新的子串来替换被匹配的子串</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/search">search()</a></div>
+                        <div class="itemDesc">对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/slice">slice()</a></div>
+                        <div class="itemDesc">摘取一个字符串区域，返回一个新的字符串</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader red">实例方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/split">split()</a></div>
+                        <div class="itemDesc">通过分离字符串成字串，将字符串对象分割成字符串数组</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/startsWith">startsWith() [es6]</a></div>
+                        <div class="itemDesc">判断字符串的起始位置是否匹配其他字符串中的字符</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/substr">substr()</a></div>
+                        <div class="itemDesc">通过指定字符数返回在指定位置开始的字符串中的字符</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/substring">substring()</a></div>
+                        <div class="itemDesc">返回在字符串中指定另个下标之间的字符</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/toLocaleLowerCase">toLocaleLowerCase()</a></div>
+                        <div class="itemDesc">根据当前区域设置，将符串中的字符转换成小写。对于大多数语言来说，toLowerCase的返回值是一致的</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/toLocaleUpperCase">toLocaleUpperCase()</a></div>
+                        <div class="itemDesc">根据当前区域设置，将字符串中的字符转换成大写，对于大多数语言来说，toUpperCase的返回值是一致的</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/toLowerCase">toLowerCase()</a></div>
+                        <div class="itemDesc">将字符串转换成小写并返回</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/toString">toString()</a></div>
+                        <div class="itemDesc">返回用字符串表示的特定对象。重写 Object.prototype.toString 方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/toUpperCase">toUpperCase()</a></div>
+                        <div class="itemDesc">将字符串转换成大写并返回</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/trim">trim()</a></div>
+                        <div class="itemDesc">从字符串的开始和结尾去除空格。参照部分 ECMAScript 5 标准</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/valueOf">valueOf()</a></div>
+                        <div class="itemDesc">返回特定对象的原始值。重写 Object.prototype.valueOf 方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/toSource">toSource() [非标准]</a></div>
+                        <div class="itemDesc">返回一个对象文字代表着特定的对象。你可以使用这个返回值来创建新的对象。重写 Object.prototype.toSource 方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/quote">quote() [非标准]</a></div>
+                        <div class="itemDesc">Wraps the string in double quotes (""")</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/trimLeft">trimLeft() [非标准]</a></div>
+                        <div class="itemDesc">从字符串的左侧去除空格</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/string#docs/trimRight">trimRight() [非标准]</a></div>
+                        <div class="itemDesc">从字符串的右侧去除空格</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/docs/javascript/javascript.html">返回</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Date</title>
+
+    <link href="/src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="/docs/javascript/Date#docs/Date">Date</a></h1>
+
+    <div class="pageDesc">创建 Date 实例用来处理日期和时间。Date 对象基于1970年1月1日（世界标准时间）起的毫秒数</div>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/prototype">Date.prototype</a></div>
+                        <div class="itemDesc">允许为 Date 实例对象添加属性</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/length">Date.length</a></div>
+                        <div class="itemDesc">Date.length 的值是 7。这是该构造函数可接受的参数个数</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader cyan">Conversion getter</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toDateString">toDateString()</a></div>
+                        <div class="itemDesc">以人类易读（human-readable）的形式返回该日期对象日期部分的字符串</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toISOString">toISOString()</a></div>
+                        <div class="itemDesc">把一个日期转换为符合 ISO 8601 扩展格式的字符串</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toJSON">toJSON()</a></div>
+                        <div class="itemDesc">使用 toISOString() 返回一个表示该日期的字符串。为了在 JSON.stringify() 方法中使用</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toLocaleDateString">toLocaleDateString()</a></div>
+                        <div class="itemDesc">返回一个表示该日期对象日期部分的字符串，该字符串格式与系统设置的地区关联（locality sensitive）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toLocaleString">toLocaleString()</a></div>
+                        <div class="itemDesc">返回一个表示该日期对象的字符串，该字符串与系统设置的地区关联（locality sensitive）。覆盖了 Object.prototype.toLocaleString() 方法</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toLocaleTimeString">toLocaleTimeString()</a></div>
+                        <div class="itemDesc">返回一个表示该日期对象时间部分的字符串，该字符串格式与系统设置的地区关联（locality sensitive）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toString">toString()</a></div>
+                        <div class="itemDesc">返回一个表示该日期对象的字符串。覆盖了Object.prototype.toString() 方法</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toTimeString">toTimeString()</a></div>
+                        <div class="itemDesc">以人类易读格式返回日期对象时间部分的字符串</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toUTCString">toUTCString()</a></div>
+                        <div class="itemDesc">把一个日期对象转换为一个以UTC时区计时的字符串</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/valueOf">valueOf()</a></div>
+                        <div class="itemDesc">返回一个日期对象的原始值。覆盖了 Object.prototype.valueOf() 方法</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toGMTString">toGMTString() [已废弃]</a></div>
+                        <div class="itemDesc">返回一个基于 GMT (UT) 时区的字符串来表示该日期。请使用 toUTCString() 方法代替</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toLocaleFormat">toLocaleFormat() [非标准]</a></div>
+                        <div class="itemDesc">使用格式字符串将日期转换为字符串</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/toSource">toSource() [非标准]</a></div>
+                        <div class="itemDesc">返回一个与Date等价的原始字符串对象，你可以使用这个值去生成一个新的对象。重写了 Object.prototype.toSource() 这个方法</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader orange">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/now">Date.now()</a></div>
+                        <div class="itemDesc">返回自 1970-1-1 00:00:00  UTC (世界标准时间)至今所经过的毫秒数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/parse">Date.parse()</a></div>
+                        <div class="itemDesc">解析一个表示日期的字符串，并返回从 1970-1-1 00:00:00 所经过的毫秒数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/UTC">Date.UTC()</a></div>
+                        <div class="itemDesc">接受和构造函数最长形式的参数相同的参数（从2到7），并返回从 1970-01-01 00:00:00 UTC 开始所经过的毫秒数</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader red">Setter方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setDate">setDate()</a></div>
+                        <div class="itemDesc">根据本地时间为指定的日期对象设置月份中的第几天</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setFullYear">setFullYear()</a></div>
+                        <div class="itemDesc">根据本地时间为指定日期对象设置完整年份（四位数年份是四个数字）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setHours">setHours()</a></div>
+                        <div class="itemDesc">根据本地时间为指定日期对象设置小时数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setMilliseconds">setMilliseconds()</a></div>
+                        <div class="itemDesc">根据本地时间为指定日期对象设置毫秒数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setMinutes">setMinutes()</a></div>
+                        <div class="itemDesc">根据本地时间为指定日期对象设置分钟数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setMonth">setMonth()</a></div>
+                        <div class="itemDesc">根据本地时间为指定日期对象设置月份</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setSeconds">setSeconds()</a></div>
+                        <div class="itemDesc">根据本地时间为指定日期对象设置秒数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setTime">setTime()</a></div>
+                        <div class="itemDesc">通过指定从 1970-1-1 00:00:00 UTC 开始经过的毫秒数来设置日期对象的时间，对于早于 1970-1-1 00:00:00 UTC的时间可使用负值</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCDate">setUTCDate()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中月份的一天 (1 ~ 31)</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCFullYear">setUTCFullYear()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中的年份（四位数字）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCHours">setUTCHours()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中的小时 (0 ~ 23)</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCMilliseconds">setUTCMilliseconds()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中的毫秒 (0 ~ 999)</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCMinutes">setUTCMinutes()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中的分钟 (0 ~ 59)</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCMonth">setUTCMonth()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中的月份 (0 ~ 11)</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setUTCSeconds">setUTCSeconds()</a></div>
+                        <div class="itemDesc">根据世界时设置 Date 对象中的秒钟 (0 ~ 59)</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/setYear">setYear() [已废弃]</a></div>
+                        <div class="itemDesc">setYear() 方法用于设置年份。请使用 setFullYear() 方法代替</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader green">Getter方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getDate">getDate()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的月份中的第几天（1-31）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getDay">getDay()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的星期中的第几天（0-6）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getFullYear">getFullYear()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的年份（四位数年份时返回四位数字）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getHours">getHours()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的小时（0-23）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getMilliseconds">getMilliseconds()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的微秒（0-999）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getMinutes">getMinutes()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的分钟（0-59）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getMonth">getMonth()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的月份（0-11）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getSeconds">getSeconds()</a></div>
+                        <div class="itemDesc">根据本地时间返回指定日期对象的秒数（0-59）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getTime">getTime()</a></div>
+                        <div class="itemDesc">返回从1970-1-1 00:00:00 UTC（协调世界时）到该日期经过的毫秒数，对于1970-1-1 00:00:00 UTC之前的时间返回负值</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getTimezoneOffset">getTimezoneOffset()</a></div>
+                        <div class="itemDesc">返回当前时区的时区偏移</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCDate">getUTCDate()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象为一个月中的第几天</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCDay">getUTCDay()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象为一星期中的第几天，其中 0 代表星期天</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCFullYear">getUTCFullYear()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象的年份</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCHours">getUTCHours()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象的小时数（0-23）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCMilliseconds">getUTCMilliseconds()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象的毫秒数（0-999）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCMinutes">getUTCMinutes()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象的分钟数（0-59）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCMonth">getUTCMonth()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象的月份（0-11）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getUTCSeconds">getUTCSeconds()</a></div>
+                        <div class="itemDesc">根据世界时间返回一个指定的日期对象的秒数（0-59）</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Date#docs/getYear">getYear() [已废弃]</a></div>
+                        <div class="itemDesc">返回年份后两位</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/docs/javascript/javascript.html">返回</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Object</title>
+
+    <link href="/src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="/docs/javascript/object#docs/Object">Object</a></h1>
+
+    <div class="pageDesc">Object 构造函数创建一个对象包装器</div>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/length">Object.length</a></div>
+                        <div class="itemDesc">值为1</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/prototype">Object.prototype</a></div>
+                        <div class="itemDesc">可以为所有 Object 类型的对象添加属性</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader red">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/assign">Object.assign()</a></div>
+                        <div class="itemDesc">通过复制一个或多个对象来创建一个新的对象</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/create">Object.create()</a></div>
+                        <div class="itemDesc">指定原型对象和属性来创建一个新的对象</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/defineProperty">Object.defineProperty()</a></div>
+                        <div class="itemDesc">给对象添加一个属性并指定该属性的配置</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/defineProperties">Object.defineProperties()</a></div>
+                        <div class="itemDesc">给对象添加多个属性并分别指定它们的配置</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/getOwnPropertyDescriptor">Object.getOwnPropertyDescriptor()</a></div>
+                        <div class="itemDesc">返回对象指定的属性配置</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/getOwnPropertyNames">Object.getOwnPropertyNames()</a></div>
+                        <div class="itemDesc">返回一个数组，它包含了指定对象所有的可枚举或不可枚举的属性名</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/getOwnPropertySymbols">Object.getOwnPropertySymbols()</a></div>
+                        <div class="itemDesc">返回一个数组，它包含了指定对象自身所有的符号属性</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/getPrototypeOf">Object.getPrototypeOf()</a></div>
+                        <div class="itemDesc">返回指定对象的原型对象</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/setPrototypeOf">Object.setPrototypeOf()</a></div>
+                        <div class="itemDesc">设置对象的原型</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/is">Object.is()</a></div>
+                        <div class="itemDesc">判断两个值是否严格相等。（类似===运算符，但+0不等于-0，NaN等于自己）</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/isExtensible">Object.isExtensible()</a></div>
+                        <div class="itemDesc">判断对象是否可扩展</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader red">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/freeze">Object.freeze()</a></div>
+                        <div class="itemDesc">冻结对象：使对象不可删除或修改它的属性</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/isFrozen">Object.isFrozen()</a></div>
+                        <div class="itemDesc">判断对象是否已经冻结</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/seal">Object.seal()</a></div>
+                        <div class="itemDesc">密封对象以防删除</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/isSealed">Object.isSealed()</a></div>
+                        <div class="itemDesc">判断对象是否已经密封</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/keys">Object.keys()</a></div>
+                        <div class="itemDesc">返回一个数组，包含指定对象的所有自有可遍历属性的名称</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/preventExtensions">Object.preventExtensions()</a></div>
+                        <div class="itemDesc">阻止对象扩展</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.entries() [草案]</a></div>
+                        <div class="itemDesc">返回一个数组，其是给定对象自身的 enumerable 属性键值对（[key, value]）</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.values() [草案]</a></div>
+                        <div class="itemDesc">返回一个数组，其是给定对象自身的 enumerable 属性值</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="li">
+                <div class="noteHeader cyan">实例属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/constructor">Object.prototype.constructor</a></div>
+                        <div class="itemDesc">特定的函数，用于创建一个对象的原型</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__proto__ [非标准]</a></div>
+                        <div class="itemDesc">指向当对象被实例化的时候，用作原型的对象</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__noSuchMethod__ [非标准]</a></div>
+                        <div class="itemDesc">当未定义的对象成员被调用作方法的时候，允许定义并执行的函数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__count__ [已废弃]</a></div>
+                        <div class="itemDesc">用于直接返回用户定义的对象中可数的属性的数量。已被废除</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__parent__ [已废弃]</a></div>
+                        <div class="itemDesc">用于指向对象的内容。已被废除</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader green">实例方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/hasOwnProperty">Object.prototype.hasOwnProperty()</a></div>
+                        <div class="itemDesc">返回一个布尔值 ，表示某个对象是否含有指定的属性，而且此属性非原型链继承的</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/isPrototypeOf">Object.prototype.isPrototypeOf()</a></div>
+                        <div class="itemDesc">返回一个布尔值，表示指定的对象是否在本对象的原型链中</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/propertyIsEnumerable">Object.prototype.propertyIsEnumerable()</a></div>
+                        <div class="itemDesc">判断指定属性是否可枚举，内部属性设置参见 ECMAScript DontEnum attribute</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/toLocaleString">Object.prototype.toLocaleString()</a></div>
+                        <div class="itemDesc">直接调用 toString()方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/toString">Object.prototype.toString()</a></div>
+                        <div class="itemDesc">返回对象的字符串表示</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/valueOf">Object.prototype.valueOf()</a></div>
+                        <div class="itemDesc">返回指定对象的原始值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/toSource">Object.prototype.toSource() [非标准]</a></div>
+                        <div class="itemDesc">返回字符串表示此对象的源代码形式，可以使用此字符串生成一个新的相同的对象</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/unwatch">Object.prototype.unwatch() [非标准]</a></div>
+                        <div class="itemDesc">移除对象某个属性的监听</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/watch">Object.prototype.watch() [非标准]</a></div>
+                        <div class="itemDesc">给对象的某个属性增加监听</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__defineGetter__() [已废弃]</a></div>
+                        <div class="itemDesc">关联一个函数到一个属性。访问该函数时，执行该函数并返回其返回值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__defineSetter__() [已废弃]</a></div>
+                        <div class="itemDesc">关联一个函数到一个属性。设置该函数时，执行该修改属性的函数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__lookupGetter__() [已废弃]</a></div>
+                        <div class="itemDesc">返回使用 __defineGetter__ 定义的方法函数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.__lookupSetter__() [已废弃]</a></div>
+                        <div class="itemDesc">返回使用 __defineSetter__ 定义的方法函数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/object#docs/">Object.prototype.eval() [已废弃]</a></div>
+                        <div class="itemDesc">在指定对象为上下文情况下执行javascript字符串代码，已经废弃</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/docs/javascript/javascript.html">返回</a>
+</div>
+</body>
+</html>

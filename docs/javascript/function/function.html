@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>function</title>
+
+    <link href="/src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="/docs/javascript/function#docs/function">function</a></h1>
+
+    <div class="pageDesc">Function 构造函数 创建一个新的Function对象。 在 JavaScript 中, 每个函数实际上都是一个Function对象</div>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">属性</div>
+                <div class="desc">全局的Function对象没有自己的属性和方法, 但是, 因为它本身也是函数，所以它也会通过原型链从Function.prototype上继承部分属性和方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/length">Function.length</a></div>
+                        <div class="itemDesc">获取函数的接收参数个数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.prototype.constructor</a></div>
+                        <div class="itemDesc">声明函数的原型构造方法，详细请参考 Object.constructor</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.arguments [已废弃]</a></div>
+                        <div class="itemDesc">以数组形式获取传入函数的所有参数。此属性已被arguments替代</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.arity [已删除]</a></div>
+                        <div class="itemDesc">用于指定的函数的参数的个数，但已被删除。使用length属性代替</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.caller [非标准]</a></div>
+                        <div class="itemDesc">获取调用函数的具体对象</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.name [非标准]</a></div>
+                        <div class="itemDesc">获取函数的名称</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.displayName [非标准]</a></div>
+                        <div class="itemDesc">获取函数的display name</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader cyan">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/call">Function.prototype.call()</a></div>
+                        <div class="itemDesc">在一个对象的上下文中应用另一个对象的方法；参数能够以列表形式传入</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/apply">Function.prototype.apply()</a></div>
+                        <div class="itemDesc">在一个对象的上下文中应用另一个对象的方法；参数能够以数组形式传入</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/bind">Function.prototype.bind()</a></div>
+                        <div class="itemDesc">bind()方法会创建一个新函数,称为绑定函数.当调用这个绑定函数时,绑定函数会以创建它时传入 bind()方法的第一个参数作为 this,
+                            传入 bind()方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/toString">Function.prototype.toString()</a></div>
+                        <div class="itemDesc">获取函数的实现源码的字符串。覆盖了 Object.prototype.toString 方法</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.prototype.isGenerator() [非标准]</a></div>
+                        <div class="itemDesc">若函数对象为generator，返回true，反之返回 false</div>
+                    </li>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/function#docs/">Function.prototype.toSource() [非标准]</a></div>
+                        <div class="itemDesc">获取函数的实现源码的字符串。 覆盖了 Object.prototype.toSource 方法</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/docs/javascript/javascript.html">返回</a>
+</div>
+</body>
+</html>

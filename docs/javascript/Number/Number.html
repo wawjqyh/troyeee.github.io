@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Number</title>
+
+    <link href="/src/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/src/css/guide.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .col {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1><a href="/docs/javascript/Number#docs/Number">Number</a></h1>
+
+    <div class="pageDesc"> JavaScript 的 Number 对象是经过封装的能让你处理数字值的对象。Number 对象由 Number() 构造器创建</div>
+
+    <div class="colCon">
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader blue">属性</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/EPSILON">Number.EPSILON [es6]</a></div>
+                        <div class="itemDesc">两个可表示(representable)数之间的最小间隔</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/MAX_SAFE_INTEGER">Number.MAX_SAFE_INTEGER [es6]</a></div>
+                        <div class="itemDesc">在 JavaScript 中最大的安全整数 (253 - 1)</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/MAX_VALUE">Number.MAX_VALUE</a></div>
+                        <div class="itemDesc">能表示的最大正数。最小的负数是 -MAX_VALUE</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/MIN_VALUE">Number.MIN_VALUE</a></div>
+                        <div class="itemDesc">能表示的最小正数即最接近 0 的正数 (实际上不会变成 0)。最大的负数是 -MIN_VALUE</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/NaN">Number.NaN</a></div>
+                        <div class="itemDesc">特殊的“非数字”值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/NEGATIVE_INFINITY">Number.NEGATIVE_INFINITY</a></div>
+                        <div class="itemDesc">特殊的负无穷大值，在溢出时返回该值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/POSITIVE_INFINITY">Number.POSITIVE_INFINITY</a></div>
+                        <div class="itemDesc">特殊的正无穷大值，在溢出时返回改值</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/prototype">Number.prototype</a></div>
+                        <div class="itemDesc">Number 对象上允许的额外属性</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader orange">方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/isNaN">Number.isNaN() [es6]</a></div>
+                        <div class="itemDesc">确定传递的值是否是 NaN</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/isFinite">Number.isFinite() [es6]</a></div>
+                        <div class="itemDesc">确定传递的值类型及本身是否是有限数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/isInteger">Number.isInteger() [es6]</a></div>
+                        <div class="itemDesc">确定传递的值类型是“number”，且是整数</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/isSafeInteger">Number.isSafeInteger() [es6]</a></div>
+                        <div class="itemDesc">确定传递的值是否为安全整数 ( -(253 - 1) 至 253 - 1之间)</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/parseFloat">Number.parseFloat() [es6]</a></div>
+                        <div class="itemDesc">和全局对象 parseFloat() 一样</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/parseInt">Number.parseInt() [es6]</a></div>
+                        <div class="itemDesc">和全局对象 parseInt() 一样</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toInteger">Number.toInteger() [已废弃]</a></div>
+                        <div class="itemDesc">计算传递的值并将其转换为整数 (或无穷大)</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="li">
+                <div class="noteHeader cyan">实例方法</div>
+                <ul>
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toExponential">toExponential()</a></div>
+                        <div class="itemDesc">返回一个使用指数表示法表示的该数值的字符串表示</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toFixed">toFixed()</a></div>
+                        <div class="itemDesc">返回一个使用定点表示法表示的该数值的字符串表示</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toLocaleString">toLocaleString()</a></div>
+                        <div class="itemDesc">返回一个与语言相关的该数值对象的字符串表示。覆盖了Object.prototype.toLocaleString() 方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toPrecision">toPrecision()</a></div>
+                        <div class="itemDesc">使用定点表示法或指数表示法来表示的指定显示位数的该数值对象的字符串表示</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toString">toString()</a></div>
+                        <div class="itemDesc">返回一个表示该数值对象的字符串。覆盖了 Object.prototype.toString() 方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/valueOf">valueOf()</a></div>
+                        <div class="itemDesc">返回该数值对象的原始值。覆盖了 Object.prototype.valueOf() 方法</div>
+                    </li>
+
+                    <li>
+                        <div class="itemName"><a href="/docs/javascript/Number#docs/toSource">toSource() [非标准]</a></div>
+                        <div class="itemDesc">返回该对象源码的字符串表示</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backLink">
+    <a href="/">首页</a>
+    <a href="/docs/javascript/javascript.html">返回</a>
+</div>
+</body>
+</html>
