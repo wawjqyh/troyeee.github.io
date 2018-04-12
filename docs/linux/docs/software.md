@@ -175,8 +175,11 @@ mount /dev/cdrom /mnt/cdrom/    //挂载光盘
 #### 查询
 
 ```javascript
-yum list                    //查询所有可用软件包列表
-yum search 关键字           //搜索服务器上所有和关键字相关的包
+yum list                        // 查询所有可用软件包列表
+yum search [关键字]             // 搜索服务器上所有和关键字相关的包
+yum list installed              // 列出所有已安装的软件包
+yum list updates                // 列出所有可更新的软件包
+yum info installed              // 列出所有已安装的软件包信息
 ```
 
 #### 安装

@@ -16,3 +16,4 @@
 1. [网络配置](#docs/netConf)
 1. [firewall](#docs/firewall)
 1. [shell](#docs/shell)
+1. [服务管理](#docs/service)
