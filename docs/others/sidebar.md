@@ -5,3 +5,4 @@
 1. [month](#docs/month)
 1. [webstorm快捷键](#docs/webstorm)
 1. [linux安装nodejs](#docs/linuxNode)
+1. [angular](#docs/angular)
