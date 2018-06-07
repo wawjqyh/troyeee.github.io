@@ -119,6 +119,8 @@ mysql>grant all on *.* to username@localhost indentified by 'password';
 
 # 授予外网登陆权限
 mysql>grant all privileges on *.* to username@'%' identified by 'password';
+# 此处的"localhost"，是指该用户只能在本地登录，不能在另外一台机器上远程登录。如果想远程登录的话，
+# 将"localhost"改为"%"，表示在任何一台电脑上都可以登录。也可以指定某台机器可以远程登录
 
 # 授予权限并且可以授权
 mysql>grant all privileges on *.* to username@'hostname' identified by 'password' with grant option;
