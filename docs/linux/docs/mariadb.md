@@ -1,6 +1,6 @@
 # MariaDB
 
-## 安装MariaDB
+## 安装 MariaDB
 
 安装命令
 
@@ -8,7 +8,7 @@
 yum -y install mariadb mariadb-server
 ```
 
-安装完成MariaDB，首先启动MariaDB
+安装完成 MariaDB，首先启动 MariaDB
 
 ```bash
 systemctl start mariadb
@@ -20,17 +20,17 @@ systemctl start mariadb
 systemctl enable mariadb
 ```
 
-## MariaDB的相关简单配置
+## MariaDB 的相关简单配置
 
-安装完mysql-server 会提示可以运行mysql_secure_installation
+安装完 mysql-server 会提示可以运行 mysql_secure_installation
 
-运行mysql_secure_installation会执行几个设置：
+运行 mysql_secure_installation 会执行几个设置：
 
-* 为root用户设置密码
-* 删除匿名账号
-* 取消root用户远程登录
-* 删除test库和对test库的访问权限
-* 刷新授权表使修改生效
+- 为 root 用户设置密码
+- 删除匿名账号
+- 取消 root 用户远程登录
+- 删除 test 库和对 test 库的访问权限
+- 刷新授权表使修改生效
 
 ```bash
 Enter current password for root (enter for none):   # 初次运行直接回车
@@ -54,7 +54,7 @@ Reload privilege tables now? [Y/n]              # 是否重新加载权限表，
 # 完成
 ```
 
-## 配置MariaDB的字符集
+## 配置 MariaDB 的字符集
 
 ```bash
 # 文件 /etc/my.cnf
@@ -77,7 +77,7 @@ default-character-set=utf8
 systemctl restart mariadb
 ```
 
-进入MariaDB查看字符集
+进入 MariaDB 查看字符集
 
 ```bash
 mysql> show variables like "%character%";show variables like "%collation%";
@@ -126,4 +126,4 @@ mysql>grant all privileges on *.* to username@'%' identified by 'password';
 mysql>grant all privileges on *.* to username@'hostname' identified by 'password' with grant option;
 ```
 
-其中只授予部分权限把 其中 all privileges或者all改为select,insert,update,delete,create,drop,index,alter,grant,references,reload,shutdown,process,file其中一部分
+其中只授予部分权限把 其中 all privileges 或者 all 改为 select,insert,update,delete,create,drop,index,alter,grant,references,reload,shutdown,process,file 其中一部分
