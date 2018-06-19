@@ -4,6 +4,12 @@
 
 ### ifconfig命令临时配置ip地址
 
+<p class="warning">如果提示ifconfig无效，可能是未安装 net-tools</p>
+
+```bash
+sudo yum install net-tools      # 安装net-tools
+```
+
 一般用于测试，重启之后就会失效
 
 ```

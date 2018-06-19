@@ -9,9 +9,10 @@ body {
   /*代码样式*/
   /*符号*/
   /*关键字*/
-  /*函数名*/
+  /*函数名、标签名*/
   /*注释*/
   /*字符串*/
+  /*操作符*/
 }
 #content pre {
   margin-left: auto;
@@ -116,13 +117,15 @@ body {
   color: #cc7832;
   font-weight: bold;
 }
-#content .function {
+#content .function,
+#content .tag {
   color: #ffc66d;
 }
 #content .comment {
   color: #808080;
 }
-#content .string {
+#content .string,
+#content .attr-value {
   color: #6a8759;
 }
 #content .operator {
@@ -387,3 +390,4 @@ table th {
   padding: 5px 10px;
   background-color: rgba(230, 100, 101, 0.1);
 }
+/*# sourceMappingURL=docs.css.map */
