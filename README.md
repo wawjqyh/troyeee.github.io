@@ -1,6 +1,6 @@
 # wawjqyh.github.io
 
-[在线文档](http://wawjqyh.github.io)
+[在线文档](https://wawjqyh.github.io)
 
 js文档
 
