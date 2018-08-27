@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: table;
+            width: 100%;
+        }
+
+        .left {
+            width: 300px;
+            display: table-cell;
+        }
+
+        .right {
+            width: 300px;
+            display: table-cell;
+        }
+
+        .center {
+            display: table-cell;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="left"></div>
+        <div class="center">233</div>
+        <div class="right"></div>
+    </section>
+</body>
+
+<script>
+    function mySort(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    var tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    mySort([5, 3, 9, 7, 2]);
+</script>
+
+</html>
