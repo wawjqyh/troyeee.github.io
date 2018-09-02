@@ -165,9 +165,9 @@ If-None-Match: W/"50d-165676be1db"                  // 客户端保留的资源�
 
 缓存原理
 
-### 使用 CDN
+### 3.4 使用 CDN
 
-### 预解析 DNS
+### 3.5 预解析 DNS
 
 ```html
 <meta http-equiv="x-dns-prefetch-control" content="on">

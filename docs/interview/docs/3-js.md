@@ -89,7 +89,7 @@ Cat.prototype.constructor = Cat;
 -   什么是任务队列：同步任务队列，异步任务队列
 -   什么是 event loop：事件循环
 -   理解哪些语句会放入异步任务队列：setTimeout、setInterval、DOM 事件、Promise
--   理解语句放入异步人物队列的时机
+-   理解语句放入异步任务队列的时机：异步任务并不会立马放到异步任务队列中，而是执行完会触发一个事件，这时就会放到异步队列中。同步任务队列会循环的去异步队列拿任务，就叫 event loop
 
 ```javascript
 // 实例

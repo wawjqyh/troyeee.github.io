@@ -44,6 +44,7 @@
 </body>
 
 <script>
+    // 冒泡排序
     function mySort(arr) {
         for (var i = 0; i < arr.length; i++) {
             for (var j = i + 1; j < arr.length; j++) {
@@ -57,7 +58,74 @@
         return arr;
     }
 
-    mySort([5, 3, 9, 7, 2]);
+    // 快速排序
+    function quickSort(arr, left, right) {
+        var len = arr.length,
+            partitionIndex,
+            left = typeof left != 'number' ? 0 : left,
+            right = typeof right != 'number' ? len - 1 : right;
+
+        if (left < right) {
+            partitionIndex = partition(arr, left, right);
+            quickSort(arr, left, partitionIndex - 1);
+            quickSort(arr, partitionIndex + 1, right);
+        }
+        return arr;
+    }
+
+    // 分区操作
+    function partition(arr, start, end) {
+        var pivot = start,                      // 设定基准值（pivot）
+            index = pivot + 1;
+        for (var i = index; i <= end; i++) {
+            if (arr[i] < arr[pivot]) {
+                swap(arr, i, index);
+                index++;
+            }
+        }
+        swap(arr, pivot, index - 1);
+        return index - 1;
+    }
+
+    function swap(arr, i, j) {
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    function side(arr) {
+        var pivot = 0;
+        var index = pivot + 1;
+
+        for (var i = index; i < arr.length; i++) {
+            if (arr[i] < arr[pivot]) {
+                swap(arr, i, index);
+                index++;
+            }
+        }
+
+        swap(arr, pivot, index - 1);
+        return arr;
+    }
+
+    var arr = side([7, 1, 0, 9, 4, 8, 3, 5, 2, 6]);
+    console.log(arr);
+
+    function getData(url) {
+        var dataStr = url.split("?")[1] ? url.split("?")[1].split("#")[0] : "";
+        var dataArr = dataStr.split("&");
+
+        var obj = {};
+
+        dataArr.forEach(item => {
+            data = item.split("=");
+
+            obj[data[0]] = data[1] ? data[1] : null;
+        });
+
+        return obj;
+    }
+
 </script>
 
 </html>
