@@ -108,14 +108,14 @@ HTTPS 和 HTTP 的区别主要如下：
 ### CSRF
 
 -   基本概念和缩写：通常称为跨站请求伪造，英文名 cross-sit request forgery
--   攻击原理：需要登录、某个接口存在漏洞
+-   攻击原理：需要登录、某个接口存在漏洞。在页面上放广告或者其他，诱导点击。需要用到 cookie
 -   防御措施:
     -   Token 验证
-    -   referer 验证
+    -   referer 验证,在 HTTP 头中有一个字段叫 Referer，它记录了该 HTTP 请求的来源地址
     -   隐藏令牌
 
 ### XSS
 
-XSS (cross-site scripting 跨域脚本攻击)，比如：利用输入框注入脚本
+XSS (cross-site scripting 跨域脚本攻击)，需要向 web 页面注入恶意代码。比如：利用输入框注入脚本
 
 防御措施：让用户输入的代码无法执行
