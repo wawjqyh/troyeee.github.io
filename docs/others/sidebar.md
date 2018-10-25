@@ -7,3 +7,4 @@
 1. [linux安装nodejs](#docs/linuxNode)
 1. [angular](#docs/angular)
 1. [react](#docs/react)
+1. [svg](#docs/svg)
