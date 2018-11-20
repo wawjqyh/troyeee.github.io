@@ -38,3 +38,4 @@ miniapp
 
 #### `app.json` 配置文件
 
+<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE" target="_blank">文档链接</a>

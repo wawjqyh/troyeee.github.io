@@ -8,3 +8,4 @@
 1. [angular](#docs/angular)
 1. [react](#docs/react)
 1. [svg](#docs/svg)
+1. [svg](#docs/miniprogram)
