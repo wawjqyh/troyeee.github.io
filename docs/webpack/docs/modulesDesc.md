@@ -165,3 +165,11 @@ define(function(require, exports, module) {
 
 ## CSS 模块化
 
+css 设计模式
+
+- OOCSS
+- SMACSS
+- Atomic CSS
+- MCSS
+- AMCSS
+- BEM
