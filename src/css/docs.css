@@ -1,5 +1,5 @@
 body {
-  font: normal normal normal 14px/20px 'Microsoft YaHei', Arial, sans-serif;
+  font: normal normal normal 14px/20px "Microsoft YaHei", Arial, sans-serif;
   color: #bababa;
   margin: 0;
   padding: 0;
@@ -73,7 +73,7 @@ body {
 }
 #content h2:hover,
 #content h3:hover {
-  color: #4682BE;
+  color: #4682be;
 }
 #content h4 {
   margin: 15px 0;
@@ -107,11 +107,11 @@ body {
 }
 #content a:link,
 #content a:visited {
-  color: #4682BE;
+  color: #4682be;
   text-decoration: none;
 }
 #content .punctuation {
-  color: #4682BE;
+  color: #4682be;
 }
 #content .keyword {
   color: #cc7832;
@@ -130,6 +130,16 @@ body {
 }
 #content .operator {
   color: #9876aa;
+}
+#content blockquote {
+  border-left: 5px solid #f6b73d;
+  padding: 5px 10px;
+  background-color: rgba(246, 183, 61, 0.1);
+  margin: 10px 0;
+}
+#content blockquote p {
+  margin: 0;
+  padding: 0;
 }
 table {
   background-color: #333;
@@ -171,7 +181,7 @@ table th {
   }
   #sidebar a:visited,
   #sidebar a:link {
-    color: #4682BE;
+    color: #4682be;
     text-decoration: none;
   }
   #sidebar ol {
@@ -212,7 +222,7 @@ table th {
     padding: 2px 0;
   }
   .content-toc a {
-    color: #4682BE;
+    color: #4682be;
     text-decoration: none;
     font-size: 14px;
   }
@@ -222,7 +232,7 @@ table th {
     font-size: 12px;
   }
   .content-toc .toc-h3 a {
-    color: #4682BE;
+    color: #4682be;
   }
   .content-toc .toc-h3:before {
     display: none;
@@ -297,7 +307,7 @@ table th {
   }
   #sidebar a:visited,
   #sidebar a:link {
-    color: #4682BE;
+    color: #4682be;
     text-decoration: none;
   }
   #sidebar ol {
@@ -342,7 +352,7 @@ table th {
     border-bottom: 1px solid #434343;
   }
   .content-toc a {
-    color: #4682BE;
+    color: #4682be;
     text-decoration: none;
     font-size: 14px;
   }
@@ -352,7 +362,7 @@ table th {
     font-size: 12px;
   }
   .content-toc .toc-h3 a {
-    color: #4682BE;
+    color: #4682be;
   }
   .content-toc .toc-h3:before {
     display: none;

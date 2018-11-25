@@ -9,18 +9,18 @@
 ## 基本配置
 
 ```javascript
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
 
   entry: {
-    app: './src/index.js'
+    app: "./src/index.js"
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash:5].js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[hash:5].js"
   }
 };
 ```
@@ -37,13 +37,13 @@ webpack --config webpack.conf.js
 
 javascript 在不断的发展，各种新的标准和提案层出不穷，但是由于浏览器的多样性，导致可能几年之内都无法广泛普及，babel 可以让你提前使用这些语言特性，他是一种用途很多的 javascript 编译器，他把最新版的 javascript 编译成当下可以执行的版本，简言之，利用 babel 就可以让我们在当前的项目中随意的使用这些新最新的 es6，甚至是未正式发布的新特性(stage 0-3)
 
-## babel
+### babel
 
 `babel` 是一个运用广泛的工具，可以单独使用或者用在其他打包工具中，`webpack` 使用 `babel-loader`
 
 ### babel-core 和 @babel/core
 
-<p class="warning">babel 7更改了包名，Babel 团队通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间，这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core</p>
+> babel 7 更改了包名，Babel 团队通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间，这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core
 
 ### babel 7 新特性(断崖式变更)
 
@@ -55,3 +55,137 @@ javascript 在不断的发展，各种新的标准和提案层出不穷，但是
 - 针对一些用户会手动安装（user-facing）的 package（例如 babel-loader，@babel/cli 等），会给 @babel/core 加上 peerDependency
 
 <a href="https://www.w3ctech.com/topic/2150" target="_blank">babel 7 新特性（原文链接）</a>
+
+### 配置
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      use: "babel-loader",
+      exclude: "/node_modules/"
+    }
+  ];
+}
+```
+
+这个配置用处不大，还需要配置 presets
+
+### presets
+
+需要指定 babel-loader 按照哪个规范来编译
+
+目前的规范：
+
+- es2015
+- es2016
+- es2017
+- env(常用，包括 es2015-es2017 和最近的版本)
+- babel-preset-react
+- babel-preset-stage 0-3(还没正式发布的几个阶段的规范)
+
+```bash
+# 安装
+npm install @babel/preset-env --save-dev
+```
+
+### targets 参数
+
+编译时会根据指定的 targets 来选择哪些语法编译哪些不编译
+
+- targets.browsers 指定哪些浏览器
+- targets.browsers: "last 2 versions" 兼容主流浏览器的最后两个版本
+- targets.browsers: "> 1%" 兼容全球占有率大于 1%的浏览器
+- targets.node 指定 node 版本
+
+> 数据来自`browserslist`(一个开源相目)，和`can i use`
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: {
+                  // browsers: ["> 1%", "last 2 versions"]
+
+                  // chrome的兼容性比较好
+                  chrome: "52"
+                }
+              }
+            ]
+          ]
+        }
+      },
+      exclude: "/node_modules/"
+    }
+  ];
+}
+```
+
+### polyfill 和 transform-runtime
+
+> preset 只能编译新规范的语法，但是不能编译函数和方法。es6 新增的函数和方法低版本的浏览器还是不能识别，需要使用 polyfill
+
+例如：
+
+- Promise
+- Generator
+- Set
+- Map
+- Array.from
+- Array.prototype.includes
+
+- Babel Polyfill：会在全局定义 es6 新增的函数和方法，直接引入就能使用（会污染全局）
+- transform-runtime：在局部引用，不会污染全局
+
+```javascript
+// 使用polyfill
+
+import "@babel/polyfill";
+
+let index = [1, 2, 3, 4].findIndex(item => {
+  return item === 3;
+});
+
+console.log(index);
+```
+
+```bash
+# 使用transform需要安装下面两个包
+
+npm install --save-dev @babel/plugin-transform-runtime
+npm install --save-dev @babel/runtime
+```
+
+```javascript
+rules: [
+  {
+    test: /\.js$/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              targets: {
+                browsers: ["last 2 versions"]
+              }
+            }
+          ]
+        ],
+        plugins: ["@babel/plugin-transform-runtime"]
+      }
+    },
+    exclude: "/node_modules/"
+  }
+];
+```
