@@ -102,7 +102,7 @@ define('alpha', ['require', 'exports', 'beta'], function(require, exports, beta)
 - SeaJS 库
 - 特点：尽可能懒执行
 
-<p class="warning">AMD 和 CMD 区别：执行方式不一样。AMD 编译时会把依赖的模块前置。CMD require 的模块会被下载下来，但是不会被执行，知道代码逻辑执行到那个地方时才会被执行</p>
+<p class="warning">AMD 和 CMD 区别：执行方式不一样。AMD 编译时会把依赖的模块前置。CMD require 的模块会被下载下来，但是不会被执行，直到代码逻辑执行到那个地方时才会被执行</p>
 
 ```javascript
 // 所有模块都通过 define 来定义

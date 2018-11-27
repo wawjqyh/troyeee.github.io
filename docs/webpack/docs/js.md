@@ -12,21 +12,21 @@
 const path = require("path");
 
 module.exports = {
-  mode: "production",
+  mode: "production", // 打包环境
 
   entry: {
-    app: "./src/index.js"
+    app: "./src/index.js" // 入口文件
   },
 
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].[hash:5].js"
+    path: path.resolve(__dirname, "dist"), // 输出文件的目录
+    filename: "[name].[hash:5].js" // 文件名
   }
 };
 ```
 
 ```bash
-# 执行 webpack
+# 执行 webpack，需要全局安装webpack
 webpack
 
 # 指定文件名
@@ -99,7 +99,7 @@ npm install @babel/preset-env --save-dev
 - targets.browsers: "> 1%" 兼容全球占有率大于 1%的浏览器
 - targets.node 指定 node 版本
 
-> 数据来自`browserslist`(一个开源相目)，和`can i use`
+> 数据来自`browserslist`(一个开源项目)，和`can i use`
 
 ```javascript
 module: {
@@ -114,10 +114,8 @@ module: {
               "@babel/preset-env",
               {
                 targets: {
-                  // browsers: ["> 1%", "last 2 versions"]
-
-                  // chrome的兼容性比较好
-                  chrome: "52"
+                  browsers: ["> 1%", "last 2 versions"] // 指定支持哪些浏览器
+                  chrome: "52" // 指定chrome版本
                 }
               }
             ]
@@ -160,7 +158,6 @@ console.log(index);
 
 ```bash
 # 使用transform需要安装下面两个包
-
 npm install --save-dev @babel/plugin-transform-runtime
 npm install --save-dev @babel/runtime
 ```
@@ -176,9 +173,7 @@ rules: [
           [
             "@babel/preset-env",
             {
-              targets: {
-                browsers: ["last 2 versions"]
-              }
+              targets: {browsers: ["last 2 versions"]}
             }
           ]
         ],

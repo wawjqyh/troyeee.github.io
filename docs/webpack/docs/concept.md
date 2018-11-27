@@ -8,7 +8,7 @@
 
 ## entry
 
-指示 `webpack` 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，`webpack` 会找出有哪些模块和库是入口起点（直接和间接）依赖的
+指示 `webpack` 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，`webpack` 会找出有哪些模块和库是入口起点（直接和间接）依赖的模块
 
 ```javascript
 module.exports = {
@@ -97,12 +97,14 @@ module.exports = {
 - 参与打包的整个过程
 - 打包优化和压缩
 - 配置编译时的变量
-- 及其灵活
+- 极其灵活
 
 ```javascript
 const webpack = require('webpack');
 
 module.exports = {
+  ...
+  
   plugins: [new webpack.optimize.UglifyJsPlugin()]
 };
 ```

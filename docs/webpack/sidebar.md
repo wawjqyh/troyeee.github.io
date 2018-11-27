@@ -7,5 +7,6 @@
 1. [打包 js](#docs/js)
 1. [提取公共代码](#docs/common)
 1. [代码分割和懒加载](#docs/split)
-1. [代码分割和懒加载](#docs/split)
 1. [处理 CSS](#docs/css)
+1. [处理 html](#docs/html)
+1. [搭建本地开发环境](#docs/devEnv)
