@@ -1,6 +1,7 @@
 import hljs from 'highlight.js';
 
 export default {
+  outputPath: './docs',
   treeShaking: true,
   disableCSSModules: true,
   plugins: [
