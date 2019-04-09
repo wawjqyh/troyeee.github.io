@@ -32,7 +32,7 @@ class Article extends Component {
 
   loadData = async () => {
     const articleName = this.props.match.params.article;
-    const html = await content[articleName];
+    const html = await content[articleName]();
     this.setState({ html: html.default });
   };
 
