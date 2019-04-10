@@ -1,7 +1,6 @@
 import hljs from 'highlight.js';
 
 export default {
-  exportStatic: true,
   treeShaking: true,
   disableCSSModules: true,
   plugins: [
@@ -19,6 +18,13 @@ export default {
         }
       }
     ]
+  ],
+
+  copy: [
+    {
+      from: '404',
+      to: ''
+    }
   ],
 
   urlLoaderExcludes: [/\.md$/],

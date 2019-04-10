@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import withRouter from 'umi/withRouter';
 import Sidebar from './components/sidebar';
 import Nav from './components/nav';
+import * as utils from '@/utils/utils';
 
 const content = {};
 
@@ -31,9 +32,15 @@ class Article extends Component {
   }
 
   loadData = async () => {
-    const articleName = this.props.match.params.article;
-    const html = await content[articleName]();
-    this.setState({ html: html.default });
+    try {
+      utils.showLoading();
+      const articleName = this.props.match.params.article;
+      const html = await content[articleName]();
+      this.setState({ html: html.default });
+      utils.hideLoading();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   render() {
