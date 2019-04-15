@@ -4,8 +4,11 @@ import withRouter from 'umi/withRouter';
 import Sidebar from './components/sidebar';
 import Nav from './components/nav';
 import * as utils from '@/utils/utils';
+import Link from 'umi/link';
+import { BackTop } from 'antd';
 
-const content = {};
+let content = {};
+let routes = {};
 
 class Article extends Component {
   state = {
@@ -14,11 +17,8 @@ class Article extends Component {
 
   constructor(props) {
     super(props);
-
-    props.docs.forEach(item => {
-      if (typeof item === 'object') content[item[1]] = item[2];
-    });
-
+    this.formatArticleList();
+    this.formatRoutes();
     this.loadData();
   }
 
@@ -31,16 +31,52 @@ class Article extends Component {
     }
   }
 
-  loadData = async () => {
+  formatArticleList = () => {
     try {
-      utils.showLoading();
-      const articleName = this.props.match.params.article;
-      const html = await content[articleName]();
-      this.setState({ html: html.default });
-      utils.hideLoading();
+      this.props.docs.forEach(item => {
+        if (typeof item === 'object' && item[1]) {
+          content[`_${item[1]}`] = item[2];
+        }
+      });
     } catch (err) {
       console.log(err);
     }
+  };
+
+  formatRoutes = () => {
+    window.g_routes.forEach(item => {
+      routes[item.path] = true;
+    });
+  };
+
+  loadData = async () => {
+    utils.showLoading();
+
+    try {
+      const articleName = this.props.match.params.article;
+      const html = await content[`_${articleName}`]();
+      this.setState({ html: html.default });
+    } catch (err) {
+      console.log(err);
+    }
+
+    utils.hideLoading();
+  };
+
+  goBackUrl = () => {
+    let curUrl = this.props.match.path.split('/');
+    curUrl.pop();
+    curUrl.shift();
+
+    function getUrl() {
+      if (!routes['/' + curUrl.join('/')]) {
+        curUrl.pop();
+        getUrl();
+      }
+    }
+    getUrl();
+
+    return '/' + curUrl.join('/');
   };
 
   render() {
@@ -48,10 +84,22 @@ class Article extends Component {
     const { docs } = this.props;
 
     return (
-      <div className="articleLayout">
+      <div className="articleLayout" id="articleLayout">
         <Sidebar docs={docs} />
         <div className="articleContent" dangerouslySetInnerHTML={{ __html: html }} />
         <Nav html={html} />
+
+        <div className="toolBar">
+          <Link to="/">首页</Link>
+          <Link to={this.goBackUrl()}>返回</Link>
+          <BackTop
+            className="backTop"
+            visibilityHeight={0}
+            target={() => document.getElementById('articleLayout')}
+          >
+            返回顶部
+          </BackTop>
+        </div>
       </div>
     );
   }

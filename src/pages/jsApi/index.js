@@ -79,7 +79,7 @@ class Index extends Component {
               items={[
                 { name: 'Object', link: 'object' },
                 { name: 'Function', link: 'Function' },
-                { name: 'Boolean', link: 'Boolean' },
+                { name: 'Boolean', link: 'Boolean/Boolean' },
                 { name: 'Symbol' },
                 { name: 'Error' },
                 { name: 'EvalError' },
@@ -98,6 +98,7 @@ class Index extends Component {
             <Card
               title="数字和日期"
               desc="用于处理数字、日期和数学运算的对象"
+              prefix="/jsApi/numbersAndDates/"
               items={[
                 { name: 'Number', link: 'Number' },
                 { name: 'Math', link: 'Math' },

@@ -1,6 +1,9 @@
 export default [
+  ['Object', 'Object', () => import('../docs/Object.md')],
+
   '属性',
   ['Object.length', 'length', () => import('../docs/length.md')],
+
   '方法',
   ['Object.assign()', 'assign', () => import('../docs/assign.md')],
   ['Object.create()', 'create', () => import('../docs/create.md')],
@@ -31,14 +34,16 @@ export default [
   ['Object.isSealed()', 'isSealed', () => import('../docs/isSealed.md')],
   ['Object.keys()', 'keys', () => import('../docs/keys.md')],
   ['Object.preventExtensions()', 'preventExtensions', () => import('../docs/preventExtensions.md')],
-  ['Object.entries() [草案]', 'entries', ''],
-  ['Object.values() [草案]', 'values', ''],
+  ['Object.entries() [草案]', '', ''],
+  ['Object.values() [草案]', '', ''],
+
   '实例属性',
   ['Object.prototype.constructor', 'constructor', () => import('../docs/constructor.md')],
   ['Object.prototype.__proto__ [非标准]', '', ''],
   ['Object.prototype.__noSuchMethod__ [非标准]', '', ''],
   ['Object.prototype.__count__ [已废弃]', '', ''],
   ['Object.prototype.__parent__ [已废弃]', '', ''],
+
   '实例方法',
   [
     'Object.prototype.hasOwnProperty()',
