@@ -1,6 +1,6 @@
 import './index.less';
 import React, { Component } from 'react';
-import cheerio from 'cheerio';
+import $ from 'jquery';
 
 class Nav extends Component {
   state = {
@@ -15,8 +15,7 @@ class Nav extends Component {
 
   generateNav = () => {
     const content = this.props.html;
-    const $ = cheerio.load(content);
-    const title = $('h2,h3');
+    const title = $(`<div>${content}</div>`).find('h2,h3');
     let liArr = [];
 
     title.each((index, item) => {

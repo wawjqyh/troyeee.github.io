@@ -5,7 +5,7 @@ import Sidebar from './components/sidebar';
 import Nav from './components/nav';
 import * as utils from '@/utils/utils';
 import Link from 'umi/link';
-import { BackTop } from 'antd';
+// import { BackTop } from 'antd';
 
 let content = {};
 let routes = {};
@@ -92,13 +92,13 @@ class Article extends Component {
         <div className="toolBar">
           <Link to="/">首页</Link>
           <Link to={this.goBackUrl()}>返回</Link>
-          <BackTop
+          {/* <BackTop
             className="backTop"
             visibilityHeight={0}
             target={() => document.getElementById('articleLayout')}
           >
             返回顶部
-          </BackTop>
+          </BackTop> */}
         </div>
       </div>
     );

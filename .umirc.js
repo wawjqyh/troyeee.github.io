@@ -7,7 +7,7 @@ export default {
     [
       'umi-plugin-react',
       {
-        antd: true,
+        antd: false,
         dva: false,
         dynamicImport: { webpackChunkName: true },
         title: 'react',

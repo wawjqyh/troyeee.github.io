@@ -1,6 +1,6 @@
-import { message, Icon } from 'antd';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import iconLoading from '../assets/loading.svg';
 
 const loadingWrapper = document.createElement('div');
 loadingWrapper.className = 'loadingWrapper';
@@ -8,17 +8,17 @@ document.body.appendChild(loadingWrapper);
 
 const errMsg = err => {
   const errText = err && err.msg ? err.msg : '网络连接超时，请稍后重试';
-  message.error(errText);
+  alert(errText);
 };
 
 const showLoading = content => {
   loadingWrapper.style.display = 'block';
   ReactDOM.render(
     <div className="fullLoading">
-      <Icon className="fullLoadingIcon" type="loading" />
+      <img className="iconLoading" src={iconLoading} alt="" />
       {content && <div className="fullLoadingCon">{content}</div>}
     </div>,
-    loadingWrapper,
+    loadingWrapper
   );
 };
 
