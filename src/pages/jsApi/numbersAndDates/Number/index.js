@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '@/components/card';
 
-const prefix = '/jsApi/fundamentalObjects/object/';
+const prefix = '/jsApi/numbersAndDates/Number/';
 
 class Index extends Component {
   render() {
