@@ -117,7 +117,11 @@ class Index extends Component {
             <Card
               title="文本处理"
               desc="用于处理文本的对象"
-              items={[{ name: 'String', link: 'String' }, { name: 'RegExp', link: 'RegExp' }]}
+              prefix="/jsApi/textProcessing/"
+              items={[
+                { name: 'String', link: 'String' },
+                { name: 'RegExp', link: 'RegExp/RegExp' }
+              ]}
             />
             <Card
               title="索引集合"
