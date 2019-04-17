@@ -2,10 +2,12 @@
   "private": true,
   "scripts": {
     "start": "umi dev",
-    "build": "ANALYZE=1 umi build",
+    "build": "umi build",
+    "analyze": "ANALYZE=1 umi build",
     "test": "umi test",
     "lint": "eslint --ext .js src mock tests",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "release": "git subtree push --prefix=dist origin master"
   },
   "dependencies": {
     "antd": "^3.15.0",
