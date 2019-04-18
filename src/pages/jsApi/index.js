@@ -126,6 +126,7 @@ class Index extends Component {
             <Card
               title="索引集合"
               desc="根据索引来排列的集合，类似于数组的对象"
+              prefix="/jsApi/indexedCollections/"
               items={[
                 { name: 'Array', link: 'Array' },
                 { name: 'Int8Array' },
