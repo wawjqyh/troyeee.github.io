@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '@/components/card';
+import BackLink from '@/components/backLink';
 
 class Index extends Component {
   render() {
@@ -142,6 +143,8 @@ class Index extends Component {
             />
           </div>
         </div>
+
+        <BackLink />
       </div>
     );
   }

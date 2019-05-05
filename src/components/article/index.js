@@ -5,21 +5,23 @@ import Sidebar from './components/sidebar';
 import Nav from './components/nav';
 import * as utils from '@/utils/utils';
 import Link from 'umi/link';
-// import { BackTop } from 'antd';
 
 let content = {};
-let routes = {};
 
 class Article extends Component {
   state = {
-    html: ''
+    html: '',
+    backUrl: ''
   };
 
   constructor(props) {
     super(props);
     this.formatArticleList();
-    this.formatRoutes();
     this.loadData();
+  }
+
+  componentDidMount() {
+    this.getBackUrl();
   }
 
   componentDidUpdate(prevProps) {
@@ -43,12 +45,6 @@ class Article extends Component {
     }
   };
 
-  formatRoutes = () => {
-    window.g_routes.forEach(item => {
-      routes[item.path] = true;
-    });
-  };
-
   loadData = async () => {
     utils.showLoading();
 
@@ -63,24 +59,28 @@ class Article extends Component {
     utils.hideLoading();
   };
 
-  goBackUrl = () => {
+  getBackUrl = () => {
+    let routes = {};
     let curUrl = this.props.match.path.split('/');
+
+    window.g_routes.forEach(item => {
+      routes[item.path] = true;
+    });
+
     curUrl.pop();
     curUrl.shift();
 
-    function getUrl() {
-      if (!routes['/' + curUrl.join('/')]) {
-        curUrl.pop();
-        getUrl();
-      }
+    while (!routes['/' + curUrl.join('/')]) {
+      curUrl.pop();
     }
-    getUrl();
 
-    return '/' + curUrl.join('/');
+    this.setState({
+      backUrl: '/' + curUrl.join('/')
+    });
   };
 
   render() {
-    const { html } = this.state;
+    const { html, backUrl } = this.state;
     const { docs } = this.props;
 
     return (
@@ -91,14 +91,7 @@ class Article extends Component {
 
         <div className="toolBar">
           <Link to="/">首页</Link>
-          <Link to={this.goBackUrl()}>返回</Link>
-          {/* <BackTop
-            className="backTop"
-            visibilityHeight={0}
-            target={() => document.getElementById('articleLayout')}
-          >
-            返回顶部
-          </BackTop> */}
+          {backUrl && backUrl !== '/' && <Link to={backUrl}>返回</Link>}
         </div>
       </div>
     );

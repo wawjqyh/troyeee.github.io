@@ -10,7 +10,7 @@ export default {
         antd: false,
         dva: false,
         dynamicImport: { webpackChunkName: true },
-        title: 'react',
+        title: 'note',
         dll: false,
 
         routes: {

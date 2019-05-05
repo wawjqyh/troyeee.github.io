@@ -4,9 +4,17 @@ import { getColor } from '@/utils/color';
 import router from 'umi/router';
 
 class Card extends Component {
-  handleClickItem = link => {
-    if (link) {
-      router.push(link);
+  handleClickItem = (prefix, link) => {
+    if (link === undefined || link === null) {
+      return;
+    }
+
+    const url = prefix ? prefix + link : link;
+
+    if (url.search(/http/) === -1) {
+      router.push(url);
+    } else {
+      window.open(url);
     }
   };
 
@@ -22,9 +30,11 @@ class Card extends Component {
           {items.map((item, index) => (
             <li key={index}>
               <div
-                className={`itemName ${item.link ? 'linkItem' : ''}`}
+                className={`itemName ${
+                  item.link !== null || item.link !== undefined ? 'linkItem' : ''
+                }`}
                 onClick={() => {
-                  this.handleClickItem(prefix + item.link);
+                  this.handleClickItem(prefix, item.link);
                 }}
               >
                 {item.name}

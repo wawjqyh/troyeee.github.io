@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '@/components/card';
+import BackLink from '@/components/backLink';
 
 const prefix = '/jsApi/numbersAndDates/Number/';
 
@@ -141,6 +142,8 @@ class Index extends Component {
             />
           </div>
         </div>
+
+        <BackLink />
       </div>
     );
   }
