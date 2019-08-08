@@ -14,6 +14,7 @@ class Index extends Component {
         <Card link="/network/ISO_OSI" title="计算机网络" desc="网络基础" />
         <Card link="/sequelize/getting-started" title="sequelize" desc="node orm 框架" />
         <Card link="/webpack/preface" title="webpack" desc="webpack" />
+        <Card link="/designPattern/objectOriented" title="设计模式" desc="javascript 设计模式" />
       </div>
     );
   }
