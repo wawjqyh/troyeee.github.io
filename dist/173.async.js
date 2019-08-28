@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[173],{qKPW:function(n,e){n.exports='<h1 id="datelength">Date.length</h1>\n<p>Date.length \u7684\u503c\u662f 7\u3002\u8fd9\u662f\u8be5\u6784\u9020\u51fd\u6570\u53ef\u63a5\u53d7\u7684\u53c2\u6570\u4e2a\u6570</p>\n'}}]);

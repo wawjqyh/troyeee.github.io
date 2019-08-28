@@ -40,9 +40,7 @@ dec.draw();
 
 ## 使用场景
 
-### ES7 装饰器
-
-装饰类
+### 装饰类
 
 ```javascript
 // 装饰类
@@ -56,7 +54,6 @@ function testDec(target) {
 }
 
 alert(Demo.isDec);
-}
 ```
 
 ```javascript
@@ -68,7 +65,9 @@ class A {}
 A = decorator(A) || A;
 ```
 
-传参数
+testDec 就是一个装饰器。它修改了 Demo 这个类的行为，为它加上了静态属性 isDec。testDec 函数的参数target 是 Demo 类本身
+
+### 传参数
 
 ```javascript
 // mixin示例
@@ -92,3 +91,66 @@ class MyClass {}
 let obj = new MyClass();
 obj.foo(); // 'foo'
 ```
+
+### 装饰方法
+
+方法装饰器有固定的格式，第一个参数是类的原型对象，第二个参数是所要装饰的属性名，第三个参数是该属性的描述对象，Object.defineProperty 中会用到。即：
+
+```javascript
+{
+  value: specifiedFunction,
+  enumerable: false,
+  configurable: true,
+  writable: true
+}
+```
+
+```javascript
+function readonly(target, name, descriptor){
+  descriptor.writable = false;
+  return descriptor;
+}
+
+class Person {
+  constructor() {
+    this.first = 'hello';
+    this.last = 'world';
+  }
+
+  @readonly
+  name() {
+    return `${this.first} ${this.last}`;
+  }
+}
+
+let p = new Person();
+p.name = function () {}; // 这里会报错，因为是只读的
+```
+
+### 装饰方法-添加log
+
+是否遇到过这样的情景，比如使用 vue 框架的时候，使用了某个方法会在 console 打印一些日志，表示这个方法即将被弃用请使用新的方法替代。使用下面的装饰器就能很容易实现这个功能。
+
+```javascript
+class Math {
+  @log
+  add(a, b) {
+    return a + b;
+  }
+}
+
+function log(target, name, descriptor) {
+  var oldValue = descriptor.value;
+
+  descriptor.value = function() {
+    console.log('执行了加法');
+    return oldValue.apply(this, arguments);
+  };
+
+  return descriptor;
+}
+
+const math = new Math();
+math.add(2, 4);
+```
+

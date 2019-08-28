@@ -1,2 +1,0 @@
-.index{padding:50px 0;width:1200px;margin:0 auto;display:flex;flex-wrap:wrap}
-.indexCard{width:224px;background-color:#fff;box-shadow:0 4px 8px 0 rgba(7,17,27,.1);border-radius:10px;overflow:hidden;transition:.5s ease-out;margin:0 20px 20px 0}.indexCard:hover{box-shadow:0 8px 16px 0 rgba(7,17,27,.2)}.indexCard:nth-child(5n){margin-right:0}.indexCard .title{height:50px;line-height:50px;padding:0 20px;color:#fff}.indexCard .content{box-sizing:content-box;padding:15px 20px;font-size:14px;line-height:20px;height:40px}.indexCard .desc{color:#666}

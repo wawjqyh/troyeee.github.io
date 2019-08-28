@@ -29,6 +29,15 @@ export default {
 
   urlLoaderExcludes: [/\.md$/],
   chainWebpack(config) {
+    config.optimization.runtimeChunk(false).splitChunks({
+      chunks: 'async',
+      name(module, chunks, cacheGroupKey) {
+        console.log('----------------');
+        console.log(chunks.name);
+        console.log(cacheGroupKey);
+      }
+    });
+
     config.module
       .rule('md')
       .test(/\.md$/)
