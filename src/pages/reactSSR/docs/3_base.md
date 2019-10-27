@@ -2,7 +2,7 @@
 
 react 服务端渲染，顾名思义就是让 react 在服务端运行，将渲染完的内容返回给浏览器，浏览器可以直接显示内容。可以理解为 react 的代码成为了后端代码，类似与模板引擎。下面通过一个很简单的例子讲解一下。
 
-## 1 写一个 react 组件
+## 1 客户端渲染组件
 
 首先写一个 react 组件，组件在客户端中是这么渲染的：
 
@@ -22,10 +22,11 @@ class Index extends Component {
 }
 
 // 客户端渲染使用 render 方法
+// 这里是将虚拟 dom 转化为真实 dom 放到页面上
 ReactDOM.render(<Index />, document.getElementById('root'));
 ```
 
-## 2 ReactDOMServer
+## 2 服务端渲染组件
 
 在服务端渲染也是类似的，react 提供了方法 ReactDOMServer 用于服务端渲染。下面是官网的文档：
 
@@ -45,6 +46,7 @@ import { renderToString } from 'react-dom/server';
 import Index from '../client/Index.jsx';
 
 router.get('/', (ctx, next) => {
+  // 这里是将虚拟 dom 转化为字符串
   const content = renderToString(<Index />);
 
   ctx.body = `
@@ -60,11 +62,54 @@ router.get('/', (ctx, next) => {
 });
 ```
 
-## 3 实现服务端组件渲染
+## 3 使用 webpack 编译服务端代码
 
 这时服务器是启动不了的，因为：
 
-- 代码中使用的是 ES Module，而 node.js 使用的是 commonJS
+- 代码中使用的是 ES Module 的语法，而 node.js 遵循的是 common.js 规范
 - node.js 无法直接执行 JSX 代码
 
-跟客户端一样，这时服务端的代码也需要使用 webpack 编译才能运行。
+所以跟客户端一样，这时服务端的代码也需要使用 webpack 编译才能运行。
+
+下面是项目的目录结构：
+
+![](../pic/3_base_20191022231406.png)
+
+> 注意这里启动服务器的需要执行编译后的 bundle.js
+
+webpack 的配置如下(没有其他花里胡哨的功能，只做了基础的编译 js/jsx 的配置)：
+
+```javascript
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+
+module.exports = {
+  target: 'node',
+  mode: 'development',
+
+  context: path.resolve(__dirname, '../'),
+  entry: './src/server/www.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, '../dist/server')
+  },
+
+  externals: [nodeExternals()],
+
+  module: {
+    rules: [
+      {
+        test: /\.(jsx|js)?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            ['@babel/preset-env', { targets: { browsers: ['last 2 versions'] } }],
+            '@babel/preset-react'
+          ]
+        }
+      }
+    ]
+  }
+};
+```
