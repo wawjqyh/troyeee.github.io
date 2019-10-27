@@ -71,12 +71,6 @@ router.get('/', (ctx, next) => {
 
 所以跟客户端一样，这时服务端的代码也需要使用 webpack 编译才能运行。
 
-下面是项目的目录结构：
-
-![](../pic/3_base_20191022231406.png)
-
-> 注意这里启动服务器的需要执行编译后的 bundle.js
-
 webpack 的配置如下(没有其他花里胡哨的功能，只做了基础的编译 js/jsx 的配置)：
 
 ```javascript
@@ -88,10 +82,11 @@ module.exports = {
   mode: 'development',
 
   context: path.resolve(__dirname, '../'),
-  entry: './src/server/www.js',
+  entry: './server/router.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist/server')
+    filename: 'server.js',
+    path: path.resolve(__dirname, '../dist'),
+    libraryTarget: 'commonjs'
   },
 
   externals: [nodeExternals()],
