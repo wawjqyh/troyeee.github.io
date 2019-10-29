@@ -1,14 +1,10 @@
-# 在 SSR 框架中使用路由
+# 在 SSR 中使用路由
 
-客户端和服务端使用路由的方式区别不大，客户端渲染使用的是 `BrowserRouter`，而服务端渲染使用的是 `StaticRouter`
-
-## 实例
-
-项目结构如下：
+首先看本次用例的项目结构：
 
 ![](../pic/5_router_20191028231319.png)
 
-关键代码：
+下面是一个配置路由的组件，客户端和服务端都是调用这个组件：
 
 ```javascript
 // src/router.jsx
@@ -26,6 +22,10 @@ class RouterIndex extends Component {
 }
 ```
 
+客户端和服务端使用路由的方式区别不大，客户端渲染使用的是 `BrowserRouter`。
+
+如下面的代码：
+
 ```javascript
 // src/main.jsx
 // 客户端使用路由
@@ -37,6 +37,8 @@ ReactDOM.hydrate(
   appTarget
 );
 ```
+
+而服务端渲染使用的是 `StaticRouter`，代码如下：
 
 ```javascript
 // server/router.js
@@ -67,4 +69,6 @@ router.get('*', (ctx, next) => {
 - `router.get('*')` 服务端需要匹配所有的路由
 - `StaticRouter` 需要传入服务端所匹配到的地址。`BrowserRouter` 可以直接拿到当前地址，因为运行在浏览器端
 
-> 服务端渲染只渲染第一次请求的页面，因为使用了同构，页面在浏览器运行后后面的路由跳转和页面渲染就会由客户端接管。单页面应用路由跳转会被拦截。
+> 因为使用了同构，服务端渲染只渲染第一次请求的页面
+
+> 页面在浏览器运行后，后面的路由跳转和页面渲染就会由客户端接管，因为单页面应用路由跳转会被拦截。
