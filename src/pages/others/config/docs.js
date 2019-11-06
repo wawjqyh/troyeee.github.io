@@ -1,6 +1,5 @@
 export default [
   ['webpack', 'webpack', () => import('../docs/webpack.md')],
-  ['git', 'git', () => import('../docs/git.md')],
   ['gulp', 'gulp', () => import('../docs/gulp.md')],
   ['webstorm快捷键', 'webstorm', () => import('../docs/webstorm.md')],
   ['linux安装nodejs', 'linuxNode', () => import('../docs/linuxNode.md')],
