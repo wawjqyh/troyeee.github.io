@@ -1,5 +1,7 @@
 # 在 SSR 中使用路由
 
+demo 地址 [https://github.com/wawjqyh/demo-react-ssr/tree/master/4-router](https://github.com/wawjqyh/demo-react-ssr/tree/master/4-router)
+
 首先看本次用例的项目结构：
 
 ![](../pic/5_router_20191028231319.png)
