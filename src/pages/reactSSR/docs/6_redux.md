@@ -116,10 +116,30 @@ router.get('*', (ctx, next) => {
 
 ## 3 运行效果
 
-![](../pic/6_redux_20191106134601.png)
+![](../pic/6_redux_20191107235907.png)
 
 ![](../pic/6_redux_20191106113918.png)
 
+上面的例子中，数据获取是在客户端完成的，服务端并未获取数据。
+
 服务端渲染渲染出了 redux 中的数据，但是只能拿到 initialState 中的数据，组件中的异步数据无法被渲染。
 
+组件是在 componentDidMount 钩子中去获取异步数据的，但是服务端渲染不会进入这个生命周期，所以异步数据无法被获取。
+
+那么服务端需要获取数据的话，异步方法就应该另外处理。
+
 ## 4 在服务端获取异步数据
+
+关于服务端渲染获取数据，react-router-dom 文档中提供了相关的方法。
+
+[https://reacttraining.com/react-router/web/guides/server-rendering](https://reacttraining.com/react-router/web/guides/server-rendering)
+
+解决方案就是，需要获取数据的组件需要提供一个 loadData 的静态方法，loadData 方法是提供给服务端调用的，这个方法负责在服务器渲染之前，把这个路由需要的数据提前加载好。
+
+而需要调用哪些 loadData 的方法，需要根据当前用户的请求地址去匹配。比如访问的是 `/login` 路径，就去拿 Login 组件的数据。所以路由的配置需要用另一种方式写。
+
+当然不局限与一种方法，主要目的就是让服务端能够知道需要去获取哪些数据，并且提供相关的方法。
+
+### loadData 方法
+
+### 路由的配置
