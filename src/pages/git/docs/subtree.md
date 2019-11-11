@@ -24,7 +24,7 @@ git subtree split --prefix=<目录> [OPTIONS] [<commit>]
 
 ## 公共子仓库
 
-有一个项目 main，main 使用到了一个公共的项目 common。common 项目是单独管理的，并且有一个仓库存放 common 项目。
+常用的使用场景，例如有一个项目 main，main 使用到了一个公共的项目 common。common 项目有多个项目依赖，需要单独维护，并且有一个仓库存放 common 项目。
 
 main 项目结构如下：
 
