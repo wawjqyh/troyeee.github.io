@@ -1,5 +1,7 @@
 # 前言
 
+本项目的 demo 地址 [https://github.com/wawjqyh/demo-react-ssr](https://github.com/wawjqyh/demo-react-ssr)
+
 页面的渲染模式有两种，分别是客户端渲染(CSR)和服务端渲染(SSR)。
 
 ## 1 服务端渲染(SSR)

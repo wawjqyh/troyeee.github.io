@@ -1,6 +1,6 @@
 # 在 SSR 中使用 redux
 
-demo 地址
+demo 地址 [https://github.com/wawjqyh/demo-react-ssr/tree/master/6-async-data](https://github.com/wawjqyh/demo-react-ssr/tree/master/6-async-data)
 
 首先抛出几个问题：
 
