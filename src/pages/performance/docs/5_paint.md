@@ -35,3 +35,32 @@ color, border-style, border-radius, visibility, text-decoration, background, bac
 4. 将每个节点绘制填充到图层位图中（paint - 重绘）
 5. 图层作为纹理上传到 GPU
 6. 合成多个图层到页面上生成最终屏幕图像（composite layers - 图层重组）
+
+重绘和回流是以图层为单位的。
+
+将频繁重绘回流的 DOM 元素单独作为一个独立图层，那么这个 DOM 元素的重绘和回流的影响只会在这个图层中。
+
+但是图层并不是越多越好，图层的合成运算量是比较大的，如果图层太多的话就会在 composite layers 这里消耗大量的性能，这点也是需要极力避免的。
+
+## chrome 创建图层的条件
+
+- 3D 或透视变换 CSS 属性（perspective transfrom）
+- 使用加速视频解码的 video 节点 (浏览器会对 video 的每一帧进行重绘，所以能看到连续的视频)
+- 拥有 3D (WebGl) 上下文或加速 2D 上下文的 canvas 节点
+- 混合插件 (如 flash)
+- 对自己的 opacity 做 CSS 动画或使用一个动画 webkit 变换的元素
+- 拥有加速 CSS 过滤器的元素 (translate 3d)
+- 元素拥有一个 z-index 较低且包含一个复合层的兄弟元素 (即有兄弟元素，有 z-index)
+
+gif 图会持续的触发重绘，但是不会创建新的图层
+
+## 优化思路
+
+- 避免使用触发重绘、回流的 CSS 属性
+- 将重绘、回流的影响范围限制在单独的图层之内
+
+## performance 工具
+
+performance 可以详细展示整个网页从请求到渲染的详细过程，并且会有一个很详细的分析。
+
+非常适合用来做性能分析。
