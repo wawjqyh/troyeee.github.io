@@ -71,23 +71,36 @@ html 代码如下：
 
 CSSOM 构建时，JavaScript 执行将暂停，直至 CSSOM 就绪。
 
-html 中有如下代码，在一个 CSS 的前后都有代码：
+html 中有如下代码，css 放在两个 div 的中间：
 
 ```html
-<div class="text">line1</div>
-<link href="./styles.css" rel="stylesheet" />
-<div class="text">line2</div>
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>验证css加载是否影响页面渲染</title>
+  </head>
+  <body>
+    <div class="text1">line1</div>
+    <link href="./styles.css" rel="stylesheet" />
+    <div class="text1">line2</div>
+  </body>
+</html>
 ```
 
-<video src="../pic/5_cssJsExec_1.mp4" control="control"></video>
+运行结果如下：
 
-![](../pic/5_cssJsExec_20200102155603.png)
+![](../pic/5_cssJsExec_20200102232358.png)
 
-![](../pic/5_cssJsExec_20200102160028.png)
+可以看到页面渲染了两次，第一次是在 html 加载完成，css 还未加载完成的时候，这时页面只渲染出了 line1，并且没有样式
 
-JavaScript 不仅可以读取和修改 DOM 属性，还可以读取和修改 CSSOM 属性。
+第二次渲染是在 css 加载完成后，这时把 line1 line2 都渲染出来了，并且有样式
 
-当浏览器遇到一个 script 标记时，DOM 构建将暂停，直至脚本完成执行。
+得出的结论就是：
+
+- 页面渲染不会等待 css js 都加载完成
+- css 会阻塞页面的渲染
 
 ## 加载和渲染过程的特点
 
