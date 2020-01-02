@@ -1,6 +1,6 @@
 # css 和 js 的装载与执行
 
-## html 页面加载渲染的过程
+## 1 html 页面加载渲染的过程
 
 ![](../pic/3_cssJsExec_20191120233819.png)
 
@@ -9,6 +9,85 @@
 3. 将 DOM 树与 CSSOM 规则树合并在一起生成渲染树
 4. 遍历渲染树开始布局，计算每个节点的位置大小信息
 5. 将渲染树每个节点绘制到屏幕
+
+这五个步骤并不一定一次性顺序完成。如果 DOM 或 CSSOM 被修改，以上过程需要重复执行，这样才能计算出哪些像素需要在屏幕上进行重新渲染。实际页面中，CSS 与 JavaScript 往往会多次修改 DOM 和 CSSOM
+
+## 2 资源加载
+
+浏览器是并行加载资源的，但是并发受域名限制，也就是一个域名只能并发加载一定数量的资源。
+
+当 HTML 解析器被脚本阻塞时，解析器虽然会停止构建 DOM，但仍然会识别该脚本后面的资源，并进行预加载。
+
+### 2.1 验证并发加载
+
+如下图，同域名只会同时加载 6 个资源
+
+![](../pic/5_cssJsExec_20191231174842.png)
+
+每个浏览器的并发数可能会不一样（这个图搬运来的，实际情况可能不一致，随着浏览器更新默认值也可能变动），并发数可以设置更改
+
+![](../pic/5_cssJsExec_20191231175931.png)
+
+### 2.2 验证 js 阻塞是否影响资源加载
+
+html 代码如下：
+
+```html
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+
+    <script>
+      function sleep(time) {
+        let endTime = new Date().getTime() + time * 1000;
+
+        while (new Date().getTime() < endTime) {}
+      }
+
+      sleep(3);
+    </script>
+  </head>
+  <body>
+    <div class="text1">line1</div>
+    <link href="./styles.css" rel="stylesheet" />
+  </body>
+</html>
+```
+
+在 header 中有一段 js 代码，会阻塞 3 秒钟。
+
+![](../pic/5_cssJsExec_20200102174938.png)
+
+可以看到 js 阻塞不会影响其他资源的加载
+
+## 3 阻塞渲染
+
+### 3.1 验证 CSS 加载是否阻塞页面渲染
+
+默认情况下，CSS 被视为阻塞渲染的资源，这意味着浏览器将不会渲染任何已处理的内容，直至 CSSOM 构建完毕。
+
+CSSOM 构建时，JavaScript 执行将暂停，直至 CSSOM 就绪。
+
+html 中有如下代码，在一个 CSS 的前后都有代码：
+
+```html
+<div class="text">line1</div>
+<link href="./styles.css" rel="stylesheet" />
+<div class="text">line2</div>
+```
+
+<video src="../pic/5_cssJsExec_1.mp4" control="control"></video>
+
+![](../pic/5_cssJsExec_20200102155603.png)
+
+![](../pic/5_cssJsExec_20200102160028.png)
+
+JavaScript 不仅可以读取和修改 DOM 属性，还可以读取和修改 CSSOM 属性。
+
+当浏览器遇到一个 script 标记时，DOM 构建将暂停，直至脚本完成执行。
 
 ## 加载和渲染过程的特点
 
@@ -35,10 +114,10 @@
 
 ## 验证对于某个域名浏览器并发数是有上限的
 
-## 验证css加载不会阻塞后面的 js 并发加载
+## 验证 css 加载不会阻塞后面的 js 并发加载
 
 ## async、defter
 
-## 动态异步引入js
+## 动态异步引入 js
 
 ## @import、link
