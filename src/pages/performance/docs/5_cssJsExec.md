@@ -28,6 +28,12 @@
 
 ![](../pic/5_cssJsExec_20191231175931.png)
 
+**结论：**
+
+- 资源会并发加载
+- 并发加载有数量限制 (并不是越多越好)
+- 各浏览器的限制不一样
+
 ### 2.2 验证 js 阻塞是否影响资源加载
 
 html 代码如下：
@@ -61,7 +67,9 @@ html 代码如下：
 
 ![](../pic/5_cssJsExec_20200102174938.png)
 
-可以看到 js 阻塞不会影响其他资源的加载
+**结论：**
+
+- js 阻塞不会影响其他资源的加载
 
 ## 3 阻塞渲染
 
@@ -97,40 +105,57 @@ html 中有如下代码，css 放在两个 div 的中间：
 
 第二次渲染是在 css 加载完成后，这时把 line1 line2 都渲染出来了，并且有样式
 
-得出的结论就是：
+**结论：**
 
-- 页面渲染不会等待 css js 都加载完成
-- css 会阻塞页面的渲染
+- 页面渲染顺序执行
+- 页面渲染不会等待 css js 都加载完成 (但是只会渲染一部分)
+- css 加载会阻塞页面的渲染 (css 后面的内容需要等待 css 加载完成才会渲染)
 
-## 加载和渲染过程的特点
+### 3.2 验证 js 加载是否影响页面渲染
 
-- 顺序执行、并发加载（多个 css、js 文件可以并发加载，但是会顺序执行。并发度受域名限制，也就是一个域名只能并发加载一定数量的资源）
-- 是否阻塞（css 加载是否阻塞 js 加载，css 加载是否阻塞 js 的执行，css 加载是否阻塞页面渲染，js 加载是否阻塞 后续 js 执行）
-- 依赖关系（页面渲染是否有依赖关系，js 执行是否有依赖关系）
-- 引入方式（css、js 的引入方式的特性）
+html 中有如下代码：
 
-## 顺序执行-并发加载
+```html
+<body>
+  <div class="text1">line1</div>
+  <script src="./script.js"></script>
+  <div class="text1">line2</div>
+</body>
+```
 
-- 词法分析（词法分析是顺序执行）
-- 并发加载
-- 并发数量
+运行结果：
 
-## css 阻塞与 js 阻塞
+![](../pic/5_cssJsExec_20200103114030.png)
 
-- css header 中阻塞页面渲染（css 加载完后才会进行渲染）
-- css 阻塞 js 执行（css 加载完之前，后续 js 的执行会被阻塞。js 执行可能需要依赖一些 css 的属性，所以需要被阻塞）
-- css 不阻塞外部脚本的加载（阻塞执行，不阻塞加载）
+**结论：**
 
-- 直接引入的 js 阻塞页面的渲染（js 可能会操作 dom 或者修改文档结构，不可能一边操作 dom 一边渲染）
-- js 不阻塞资源的加载（webkit 会预扫描资源，并且会预加载）
-- js 顺序执行，阻塞后续 js 逻辑的执行
+- js 加载会阻塞页面渲染，js 后面的内容在 js 加载完成前不会被渲染
+- js 运行会阻塞页面渲染，js 运行时页面不会被渲染，因为 js 可能会操作 dom 或者修改文档结构，不可能一边操作 dom 一边渲染
+- js 顺序执行，阻塞后续 js 的执行
 
-## 验证对于某个域名浏览器并发数是有上限的
+### 3.3 defer
 
-## 验证 css 加载不会阻塞后面的 js 并发加载
+```html
+<body>
+  <div class="text1">line1</div>
+  <script src="./script1.js" defer></script>
+  <script src="./script2.js" defer></script>
+  <div class="text1">line2</div>
+</body>
+```
 
-## async、defter
+运行结果: 先渲染页面，然后执行 js，并且顺序执行
 
-## 动态异步引入 js
+![](../pic/5_cssJsExec_20200103141756.png)
 
-## @import、link
+**结论：**
+
+- async 与 defer 属性对于 inline-script 都是无效的
+- defer 属性表示延迟执行引入的 JavaScript，即这段 JavaScript 加载时 HTML 并未停止解析，这两个过程是并行的
+- defer 不会改变 script 中代码的执行顺序 (加了 defer 属性的 js) (没有加 defer 的 js 会阻塞并且先执行)
+
+### 3.4 async
+
+- async 与 defer 的区别在于，如果已经加载好，就会开始执行
+- 多个 async-script 的执行顺序是不确定的
+- 向 document 动态添加 script 标签时，async 属性默认是 true

@@ -1,12 +1,12 @@
 # 回流与重绘
 
-## css 会让 js 变慢
+## 1 css 会让 js 变慢
 
 频繁触发重绘与回流，回导致 UI 频繁渲染，最终导致 js 变慢
 
-## 回流和重绘的概念
+## 2 回流和重绘的概念
 
-### 回流
+### 2.1 回流
 
 - 当 render tree 中的一部分（或全部）因为元素的规模尺寸、布局、隐藏等改变而需要重新构建。这就称为回流
 - 当页面的布局和几何属性改变时，就需要回流
@@ -17,7 +17,7 @@
 - 定位属性和浮动。top, bottom, left, right, position, float, clear
 - 改变节点内部文字结构。text-aligin, overflow, font-weight, font-family, line-height, vertival-aligin, font-size
 
-### 重绘
+### 2.2 重绘
 
 - 当 render tree 中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如 `background-color`。这就称为重绘
 
@@ -27,7 +27,7 @@
 
 color, border-style, border-radius, visibility, text-decoration, background, background-image, background-position, background-repeat, background-size, outline-color, outline-style, box-shadow
 
-## 新建 DOM 的过程
+## 3 新建 DOM 的过程
 
 1. 获取 DOM 后分割为多个图层
 2. 对每个图层的节点计算样式结果（recalculate style - 样式重计算）
@@ -42,7 +42,7 @@ color, border-style, border-radius, visibility, text-decoration, background, bac
 
 但是图层并不是越多越好，图层的合成运算量是比较大的，如果图层太多的话就会在 composite layers 这里消耗大量的性能，这点也是需要极力避免的。
 
-## chrome 创建图层的条件
+## 4 chrome 创建图层的条件
 
 - 3D 或透视变换 CSS 属性（perspective transfrom）
 - 使用加速视频解码的 video 节点 (浏览器会对 video 的每一帧进行重绘，所以能看到连续的视频)
@@ -54,7 +54,7 @@ color, border-style, border-radius, visibility, text-decoration, background, bac
 
 gif 图会持续的触发重绘，但是不会创建新的图层
 
-## 优化思路
+## 5 优化思路
 
 - 避免使用触发重绘、回流的 CSS 属性
 - 将重绘、回流的影响范围限制在单独的图层之内
