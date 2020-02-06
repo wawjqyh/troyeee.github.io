@@ -56,9 +56,15 @@ gif 图会持续的触发重绘，但是不会创建新的图层
 
 ## 5 优化思路
 
-- 避免使用触发重绘、回流的 CSS 属性
-- 将重绘、回流的影响范围限制在单独的图层之内
-- 合理使用图层，过多的图层会使 Composite Layers 耗时过长
+- 使用 translate 代替 top，top 会触发 layout 但 translate 不会
+- 使用 opacity 代替 visibility，独立图层情况下，visibility 会触发重绘但是 opacity 不会
+- 不要一条条修改 DOM 样式，预先定义好 class 然后修改 DOM 的 className，因为每修改一条样式都会触发重绘
+- 把 DOM 离线后修改，display: none，后续修改都不会重绘
+- 不要把 DOM 的属性值放在循环里，当成循环的变量。比如获取 offsetHeight 时，会触发回流。因为需要刷新缓冲区域，去获取真实的值
+- 不要使用 table 布局，可能一个小改动会造成整个 table 的重新布局
+- 动画实现速度的选择，UI 线程和 js 线程是相互阻塞的，css 动画会影响 js 运行
+- 动画区域使用新图层
+- 启动 GPU 硬件加速
 
 ## 6 performance 工具
 
@@ -125,7 +131,9 @@ box1.addEventListener('click', () => {
 });
 
 // 改变元素的背景颜色
-
+box1.addEventListener('click', () => {
+  box1.style.backgroundColor = '#00f';
+});
 ```
 
 ![](../pic/6_paint_20200107164141.png)
