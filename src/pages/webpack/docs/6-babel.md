@@ -1,51 +1,12 @@
-# 打包 js
+# babel
 
-使用 webpack 的方式
-
-- webpack 命令
-- webpack 配置
-- 第三方脚手架
-
-## 基本配置
-
-```javascript
-const path = require("path");
-
-module.exports = {
-  mode: "production", // 打包环境
-
-  entry: {
-    app: "./src/index.js" // 入口文件
-  },
-
-  output: {
-    path: path.resolve(__dirname, "dist"), // 输出文件的目录
-    filename: "[name].[hash:5].js" // 文件名
-  }
-};
-```
-
-```bash
-# 执行 webpack，需要全局安装webpack
-webpack
-
-# 指定文件名
-webpack --config webpack.conf.js
-```
-
-## 编译 ES6/7
-
-javascript 在不断的发展，各种新的标准和提案层出不穷，但是由于浏览器的多样性，导致可能几年之内都无法广泛普及，babel 可以让你提前使用这些语言特性，他是一种用途很多的 javascript 编译器，他把最新版的 javascript 编译成当下可以执行的版本，简言之，利用 babel 就可以让我们在当前的项目中随意的使用这些新最新的 es6，甚至是未正式发布的新特性(stage 0-3)
-
-### babel
+## 1 babel 简介
 
 `babel` 是一个运用广泛的工具，可以单独使用或者用在其他打包工具中，`webpack` 使用 `babel-loader`
 
-### babel-core 和 @babel/core
+javascript 在不断的发展，各种新的标准和提案层出不穷，但是由于浏览器的多样性，导致可能几年之内都无法广泛普及，babel 可以让你提前使用这些语言特性，他是一种用途很多的 javascript 编译器，他把最新版的 javascript 编译成当下可以执行的版本，简言之，利用 babel 就可以让我们在当前的项目中随意的使用这些新最新的 es6，甚至是未正式发布的新特性(stage 0-3)
 
-> babel 7 更改了包名，Babel 团队通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间，这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core
-
-### babel 7 新特性(断崖式变更)
+### 1.1 babel 7 新特性(断崖式变更)
 
 - 对那些已经不维护的 node 版本不予支持，包括 0.10、0.12、4、5
 - Babel 团队会通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间（详情），这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core
@@ -56,6 +17,10 @@ javascript 在不断的发展，各种新的标准和提案层出不穷，但是
 
 <a href="https://www.w3ctech.com/topic/2150" target="_blank">babel 7 新特性（原文链接）</a>
 
+### 1.2 babel-core 和 @babel/core
+
+> babel 7 更改了包名，Babel 团队通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间，这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core
+
 ### 配置
 
 ```javascript
@@ -63,8 +28,8 @@ module: {
   rules: [
     {
       test: /\.js$/,
-      use: "babel-loader",
-      exclude: "/node_modules/"
+      use: 'babel-loader',
+      exclude: '/node_modules/'
     }
   ];
 }
@@ -147,7 +112,7 @@ module: {
 ```javascript
 // 使用polyfill
 
-import "@babel/polyfill";
+import '@babel/polyfill';
 
 let index = [1, 2, 3, 4].findIndex(item => {
   return item === 3;
@@ -167,20 +132,20 @@ rules: [
   {
     test: /\.js$/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: [
           [
-            "@babel/preset-env",
+            '@babel/preset-env',
             {
-              targets: {browsers: ["last 2 versions"]}
+              targets: { browsers: ['last 2 versions'] }
             }
           ]
         ],
-        plugins: ["@babel/plugin-transform-runtime"]
+        plugins: ['@babel/plugin-transform-runtime']
       }
     },
-    exclude: "/node_modules/"
+    exclude: '/node_modules/'
   }
 ];
 ```
