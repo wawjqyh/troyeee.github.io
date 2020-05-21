@@ -2,7 +2,7 @@
 
 ## 1 css 会让 js 变慢
 
-频繁触发重绘与回流，回导致 UI 频繁渲染，最终导致 js 变慢
+频繁触发重绘与回流，会导致 UI 频繁渲染，最终导致 js 变慢
 
 ## 2 回流和重绘的概念
 
@@ -68,6 +68,14 @@ gif 图会持续的触发重绘，但是不会创建新的图层
 
 ## 6 performance 工具
 
+Chrome 的开发者工具各有自己的侧重点，如 Network 工具的瀑布图有着资源拉取顺序的详细信息，它的侧重点在于分析网路链路。而 Performance 工具的侧重点则在于前端渲染过程，它拥有帧率条形图、CPU 使用率面积图、资源瀑布图、主线程火焰图、事件总揽等模块，它们和渲染息息相关，善用它们可以清晰地观察整个渲染阶段
+
+performance 工具如下图：
+
+![](../pic/6_paint_20200521180012.png)
+
+参考下面文章：
+
 [https://juejin.im/post/5b65105f5188251b134e9778](https://juejin.im/post/5b65105f5188251b134e9778)
 
 [https://developers.google.com/web/tools/chrome-devtools/evaluate-performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)
@@ -77,8 +85,6 @@ gif 图会持续的触发重绘，但是不会创建新的图层
 跟页面性能挂勾比较深的几个维度是：网络链路、服务器资源、前端渲染效率、客户端硬件
 
 这几个维度不是互不相关的，反而是犬牙交错的关系。例如渲染过程中浏览器反应很慢，有可能是脚本写得太烂遭遇性能瓶颈，也有可能是应用开太多或者正在打游戏占用了过多计算机资源
-
-Performance 工具的侧重点则在于前端渲染过程，它拥有帧率条形图、CPU 使用率面积图、资源瀑布图、主线程火焰图、事件总揽等模块，它们和渲染息息相关，善用它们可以清晰地观察整个渲染阶段
 
 **控制面板选项：**
 
@@ -112,6 +118,10 @@ Performance 工具的侧重点则在于前端渲染过程，它拥有帧率条�
 
 ## 7 rendering 工具
 
+这个工具可以很直观的观察页面的渲染情况：
+
+![](../pic/6_paint_20200521175459.png)
+
 - Paint flashing 高亮重绘区域
 - Layout Shift Regions 高亮移动的区域
 - Layer borders 显示图层组合边界
@@ -122,28 +132,30 @@ Performance 工具的侧重点则在于前端渲染过程，它拥有帧率条�
 
 ## 8 实例
 
-### 8.1 回流和重绘
+### 8.1 重绘
+
+只改变元素的背景颜色，观察 performance 工具中的渲染情况
 
 ```javascript
-// 改变元素的 left 值
-box1.addEventListener('click', () => {
-  box1.style.left = '100px';
-});
-
 // 改变元素的背景颜色
-box1.addEventListener('click', () => {
-  box1.style.backgroundColor = '#00f';
+box1.addEventListener("click", () => {
+  box1.style.backgroundColor = "#00f";
 });
 ```
 
 ![](../pic/6_paint_20200107164141.png)
-(重绘)
+
+### 8.2 回流
+
+改变元素的 left 值，这时应该会触发回流
+
+```javascript
+// 改变元素的 left 值
+box1.addEventListener("click", () => {
+  box1.style.left = "100px";
+});
+```
 
 ![](../pic/6_paint_20200107164228.png)
-(回流)
 
-- 重绘，触发重绘的属性
-- 回流，触发回流的属性
-- 图层，创建图层的条件
-- 图层过多情况
-- renderer 工具
+上图可以看到，点击按钮后有一次 Layout，说明页面进行了重绘
