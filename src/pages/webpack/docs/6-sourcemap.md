@@ -93,4 +93,27 @@ function hello() {
 
 `cheap-source-map` 的错误信息只能定位到行，并且无法在列上面打断点
 
-https://juejin.im/post/58293502a0bb9f005767ba2f
+### 2.4 cheap-module-source-map
+
+> todo 待测试，module 会添加 loader 和第三方模块的 sourcemap
+
+### 2.5 eval
+
+eval 和 source map 是两中完全不同的方式
+
+source map 是通过位置信息映射，可以完整的显示源代码
+
+eval 模式会把每个 module 封装到 eval 里包裹起来执行，并且会在末尾追加注释
+
+```javascript
+function(module,exports,__webpack_require__){
+  eval(
+    ...
+    //# sourceURL=webpack:///./src/js/index.js?'
+  )
+}
+```
+
+![](../pic/6-sourcemap_20200529182958.png)
+
+eval 模式在浏览器中看到的是转换过的代码，无法精确的定位错误
