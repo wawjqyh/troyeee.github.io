@@ -1,5 +1,7 @@
 # babel
 
+[babel 中文文档](https://babel.docschina.org)
+
 ## 1 babel 简介
 
 `babel` 是一个运用广泛的工具，可以单独使用或者用在其他打包工具中，`webpack` 使用 `babel-loader`
@@ -19,9 +21,11 @@ javascript 在不断的发展，各种新的标准和提案层出不穷，但是
 
 ### 1.2 babel-core 和 @babel/core
 
+`@babel/core` 是 babel 的核心库，
+
 > babel 7 更改了包名，Babel 团队通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间，这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core
 
-### 配置
+## 2 配置
 
 ```javascript
 module: {
@@ -35,9 +39,9 @@ module: {
 }
 ```
 
-这个配置用处不大，还需要配置 presets
+上面是一个基础的配置，在实际项目中还需要配置 presets
 
-### presets
+### 2.1 presets
 
 需要指定 babel-loader 按照哪个规范来编译
 
@@ -55,7 +59,7 @@ module: {
 npm install @babel/preset-env --save-dev
 ```
 
-### targets 参数
+### 2.1 targets 参数
 
 编译时会根据指定的 targets 来选择哪些语法编译哪些不编译
 
@@ -93,7 +97,7 @@ module: {
 }
 ```
 
-### polyfill 和 transform-runtime
+### 2.3 polyfill 和 transform-runtime
 
 > preset 只能编译新规范的语法，但是不能编译函数和方法。es6 新增的函数和方法低版本的浏览器还是不能识别，需要使用 polyfill
 
