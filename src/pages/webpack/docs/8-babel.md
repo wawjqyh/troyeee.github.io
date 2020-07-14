@@ -21,7 +21,7 @@ javascript 在不断的发展，各种新的标准和提案层出不穷，但是
 
 ### 1.2 babel-core 和 @babel/core
 
-`@babel/core` 是 babel 的核心库，
+`@babel/core` 是 babel 的核心库
 
 > babel 7 更改了包名，Babel 团队通过使用 “scoped” packages 的方式，来给自己的 babel package name 加上 @babel 命名空间，这样以便于区分官方 package 以及 非官方 package，所以 babel-core 会变成 @babel/core
 
@@ -43,7 +43,9 @@ module: {
 
 ### 2.1 presets
 
-需要指定 babel-loader 按照哪个规范来编译
+babel-loader 只是将 webpack 和 babel 打通，需要将语法转译还需要其他的模块 presets
+
+presets 就是指定 babel-loader 按照哪个规范来编译
 
 目前的规范：
 
@@ -59,9 +61,72 @@ module: {
 npm install @babel/preset-env --save-dev
 ```
 
-### 2.1 targets 参数
+### 2.2 polyfill
 
-编译时会根据指定的 targets 来选择哪些语法编译哪些不编译
+> preset 只能编译新规范的语法，但是不能编译函数和方法。es6 新增的函数和方法低版本的浏览器还是不能识别，需要使用 polyfill
+
+例如：
+
+- Promise
+- Generator
+- Set
+- Map
+- Array.from
+- Array.prototype.includes
+
+如图，只配置 preset，const 和箭头函数被编译的，但是 Promise 函数没有
+
+![](../pic/8-babel_20200714150324.png)
+
+![](../pic/8-babel_20200714150354.png)
+
+Babel Polyfill 会在全局定义 es6 新增的函数和方法（会污染全局）
+
+完整引入 polyfill:
+
+```javascript
+// 完整引入 polyfill
+// 如果需要按需引入，在 presets 配置中配置 useBuiltIns: 'usage'
+import '@babel/polyfill';
+
+let index = [1, 2, 3, 4].findIndex(item => {
+  return item === 3;
+});
+
+console.log(index);
+```
+
+按需引入 polyfill:
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          // useBuiltIns: 'usage' 按需引入
+          presets: [['@babel/preset-env', { useBuiltIns: 'usage' }]]
+        }
+      },
+      exclude: '/node_modules/'
+    }
+  ];
+}
+```
+
+### 2.3 transform-runtime
+
+`import '@babel/polyfill'` 方式是在全局注入一些方法，会污染全局
+
+在业务项目中使用没有问题，但是在写一些第三方库的时候不能用这种方式
+
+transform-runtime 会以闭包的方式注入，不会污染全局
+
+### 2.4 targets 参数
+
+编译时会根据指定的 targets 来选择哪些语法编译哪些不编译，包括语法的编译和 polyfill 的按需引入
 
 - targets.browsers 指定哪些浏览器
 - targets.browsers: "last 2 versions" 兼容主流浏览器的最后两个版本
@@ -95,61 +160,4 @@ module: {
     }
   ];
 }
-```
-
-### 2.3 polyfill 和 transform-runtime
-
-> preset 只能编译新规范的语法，但是不能编译函数和方法。es6 新增的函数和方法低版本的浏览器还是不能识别，需要使用 polyfill
-
-例如：
-
-- Promise
-- Generator
-- Set
-- Map
-- Array.from
-- Array.prototype.includes
-
-- Babel Polyfill：会在全局定义 es6 新增的函数和方法，直接引入就能使用（会污染全局）
-- transform-runtime：在局部引用，不会污染全局
-
-```javascript
-// 使用polyfill
-
-import '@babel/polyfill';
-
-let index = [1, 2, 3, 4].findIndex(item => {
-  return item === 3;
-});
-
-console.log(index);
-```
-
-```bash
-# 使用transform需要安装下面两个包
-npm install --save-dev @babel/plugin-transform-runtime
-npm install --save-dev @babel/runtime
-```
-
-```javascript
-rules: [
-  {
-    test: /\.js$/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: { browsers: ['last 2 versions'] }
-            }
-          ]
-        ],
-        plugins: ['@babel/plugin-transform-runtime']
-      }
-    },
-    exclude: '/node_modules/'
-  }
-];
 ```
