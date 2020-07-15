@@ -14,7 +14,7 @@
 
 配置：
 
-- `contentBase` 提供内容的路径，静态文件需要指定，一般不会用到
+- `contentBase` 提供内容的路径，即项目打包后的根目录
 - `port` 端口
 - `historyApiFallback` 使用 html5 history 时需要配置这个参数，不配置会显示 404
 - `https` 本地会自动生成证书，或者自己指定

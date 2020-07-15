@@ -124,6 +124,30 @@ module: {
 
 transform-runtime 会以闭包的方式注入，不会污染全局
 
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          plugins: [
+            [
+              '@babel/plugin-transform-runtime',
+              {
+                corejs: 2
+              }
+            ]
+          ]
+        }
+      },
+      exclude: '/node_modules/'
+    }
+  ];
+}
+```
+
 ### 2.4 targets 参数
 
 编译时会根据指定的 targets 来选择哪些语法编译哪些不编译，包括语法的编译和 polyfill 的按需引入
@@ -133,7 +157,7 @@ transform-runtime 会以闭包的方式注入，不会污染全局
 - targets.browsers: "> 1%" 兼容全球占有率大于 1%的浏览器
 - targets.node 指定 node 版本
 
-> 数据来自`browserslist`(一个开源项目)，和`can i use`
+> 数据来自 `browserslist` (一个开源项目)，和 `can i use`
 
 ```javascript
 module: {
