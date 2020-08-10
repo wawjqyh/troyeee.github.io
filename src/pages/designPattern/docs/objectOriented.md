@@ -117,3 +117,5 @@ window.$ = function (slector) {
 
 let test = $('#test');
 ```
+
+test

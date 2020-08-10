@@ -3,22 +3,12 @@ import hljs from 'highlight.js';
 export default {
   treeShaking: true,
   disableCSSModules: true,
-  plugins: [
-    [
-      'umi-plugin-react',
-      {
-        antd: false,
-        dva: false,
-        dynamicImport: { webpackChunkName: true },
-        title: 'note',
-        dll: false,
 
-        routes: {
-          exclude: [/components\//, /config\//, /docs\//]
-        }
-      }
-    ]
-  ],
+  antd: false,
+  dva: false,
+  dynamicImport: {},
+  title: 'note',
+  dll: false,
 
   copy: [
     {
@@ -29,14 +19,15 @@ export default {
 
   urlLoaderExcludes: [/\.md$/],
   chainWebpack(config) {
-    /* config.optimization.runtimeChunk(false).splitChunks({
+    config.output.chunkFilename('[name].js');
+
+    config.optimization.runtimeChunk(false).splitChunks({
       chunks: 'async',
-      name(module, chunks, cacheGroupKey) {
-        console.log('----------------');
-        console.log(chunks.name);
-        console.log(cacheGroupKey);
+      cacheGroups: {
+        vendors: false,
+        default: false
       }
-    }); */
+    });
 
     config.module
       .rule('md')

@@ -20,4 +20,19 @@ module.exports = {
 };
 ```
 
+> mode 为 production 时不需要做上面的配置，production 默认开启了 tree shaking
+
 ## 3 sideEffects
+
+忽略配置的文件，不对这些文件做 tree shaking
+
+在 `package.json` 中配置，如：
+
+```javascript
+"sideEffects": [
+  "**/*.css",
+  "**/*.scss",
+  "./esnext/index.js",
+  "./esnext/configure.js"
+]
+```
