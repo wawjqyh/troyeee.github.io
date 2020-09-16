@@ -105,37 +105,95 @@ module: {
 
 ## 5 提取 css 到单独的文件
 
-// todo 待更新
+使用 MiniCssExtractPlugin
 
-使用 plugin `extract-text-webpack-plugin`
+[文档](https://webpack.docschina.org/plugins/mini-css-extract-plugin/)
 
-配置：
+### 5.1 基本使用
 
 ```javascript
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
-  ...
+  plugins: [
+    new MiniCssExtractPlugin({
+      // 类似于 webpackOptions.output 中的选项
+      // 所有选项都是可选的
+      filename: '[name].[chunkhash:5].css',
+      chunkFilename: '[name].[chunkhash:5].css'
+    })
+  ], // 使用插件
+
   module: {
     rules: [
       {
-        test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          // fallback,不提取时的操作
-          fallback: {loader: 'style-loader'},
-
-          // 处理 css 的 loader
-          use: [
-            {loader: 'css-loader'},
-            {loader: 'less-loader'}
-          ]
-        })
+        test: /\.css$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // 你可以在这里指定特定的 publicPath
+              // 默认情况下使用 webpackOptions.output 中的 publicPath
+              publicPath: '../',
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader'
+        ]
       }
     ]
-  },
+  }
+};
+```
 
+### 5.2 提取所有 css 到一个文件
+
+使用 optimization.splitChunks.cacheGroups 选项，所有的 CSS 可以被提取到一个 CSS 文件中
+
+```javascript
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
   plugins: [
-    new ExtractTextPlugin({
-      filename: 'style.min.css'
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      }
+    ]
+  }
+};
+```
+
+## 6 压缩 css
+
+使用插件 `optimize-css-assets-webpack-plugin`
+
+```javascript
+const OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
+
+module.exports = {
+  // ...
+  optimization: {
+    minimizer: [new OptimizeCssPlugin({})]
+    // ...
+  }
 };
 ```
